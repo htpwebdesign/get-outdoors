@@ -182,3 +182,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Remove block editor from pages (company history page)
+ */
+function get_outdoors_post_filter( $use_block_editor, $post) {
+	$page_ids = array(78);
+	if ( in_array( $post->ID, $page_ids ) ) {
+		return false; 
+	} else { 
+		return $use_block_editor;
+	}
+}
+add_filter( 'use_block_editor_for_post', 'get_outdoors_post_filter', 10, 2);

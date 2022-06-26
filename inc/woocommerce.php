@@ -225,3 +225,12 @@ if ( ! function_exists( 'get_outdoors_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+
+// Remove Item Cound from Product Page
+remove_action(
+	'woocommerce_before_shop_loop',
+	'woocommerce_result_count',
+	20
+);
+

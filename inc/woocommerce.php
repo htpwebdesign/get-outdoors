@@ -234,3 +234,20 @@ remove_action(
 	20
 );
 
+
+// function go_product_header() {
+// 	echo 'Products';
+// }
+
+// add_action(
+// 	'woocommerce_before_shop_loop',
+// 	'go_product_header',
+// 	31
+// );
+
+// Add 'Add to Cart' button
+add_action(
+	'woocommerce_shop_loop',
+	'woocommerce_template_loop_add_to_cart',
+	1
+);

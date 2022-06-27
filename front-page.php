@@ -23,7 +23,16 @@ get_header();
 		?>
 
 		<section id="home-featured-bundle">
-
+			<?php
+				if (function_exists( 'get_field' )) {
+					$featuredbundle = get_field( 'featuredbundle' );
+					if ($featuredbundle) {
+						?>
+							<h3><?php echo esc_html($featuredbundle->name) ?></h3>
+						<?php
+					}
+				}
+			?>
 		</section>
 
 		<section id="home-new-products">
@@ -32,6 +41,16 @@ get_header();
 					'post_type' => 'product',
 					'posts_per_page' => 4,
 					'orderby' => 'date',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'category',
+							'field' => 'term_id',
+							'terms' => array( 49 ),
+							'operator' => 'NOT IN',
+						),
+					),
+
+					// 'category__not_in' => array(49),
 				);
 				
 				$query = new WP_Query( $args );
@@ -74,8 +93,8 @@ get_header();
 							?>
 								<li>
 									<a href="<?php echo esc_url(get_term_link( $term )) ?>">
-											<img src="<?php $term_img ?>">
-										<?php echo esc_html( get_term( $term )->name ); ?>
+										<img src="<?php $term_img ?>">
+										<p><?php echo esc_html( get_term( $term )->name ); ?></p>
 									</a>
 								</li>
 							<?php
@@ -86,15 +105,18 @@ get_header();
 		</section>
 
 		<section id="home-upcomming-workshops">
-
+			<h2>Upcoming Workshops</h2>
 		</section>
 
 		<section id="home-faq-cta">
-
+			<h2>Have Questions?</h2>
+			<p>Check out our Frequently Asked Questions!</p>
+			<a id="home-faq-button" href="<?php echo get_permalink( 14 ) ?>#faq">FAQs</a>
 		</section>
 
 		<section id="home-newsletter-signup">
-
+			<h3>Newsletter</h3>
+			<p>Sign up for our newsletter to keep up to date and recieve news about our latest products an upcoming workshops you can attend!</p>
 		</section>
 		<?php
 			endwhile;

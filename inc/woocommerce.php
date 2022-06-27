@@ -227,17 +227,17 @@ if ( ! function_exists( 'get_outdoors_woocommerce_header_cart' ) ) {
 }
 
 
-// Remove Item Cound from Product Page
+// Remove Item Cound from the Products Page
 remove_action(
 	'woocommerce_before_shop_loop',
 	'woocommerce_result_count',
 	20
 );
 
-
-// function go_product_header() {
-// 	echo 'Products';
-// }
+/**
+* Custom Post Type & Taxonamies
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 // add_action(
 // 	'woocommerce_before_shop_loop',
@@ -245,9 +245,3 @@ remove_action(
 // 	31
 // );
 
-// Add 'Add to Cart' button
-add_action(
-	'woocommerce_shop_loop',
-	'woocommerce_template_loop_add_to_cart',
-	1
-);

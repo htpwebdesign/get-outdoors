@@ -227,6 +227,10 @@ if ( ! function_exists( 'get_outdoors_woocommerce_header_cart' ) ) {
 }
 
 
+// Remove Archive Title Prefix
+
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
 // Remove Item Cound from the Products Page
 remove_action(
 	'woocommerce_before_shop_loop',
@@ -234,10 +238,12 @@ remove_action(
 	20
 );
 
-/**
-* Custom Post Type & Taxonamies
- */
+
+//Custom Post Type & Taxonamies
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// Add Image Size
+add_image_size( 'event-archive-img', 300, 200, true );
 
 // add_action(
 // 	'woocommerce_before_shop_loop',

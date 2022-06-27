@@ -20,16 +20,29 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
+
+			// print_r($bundled_item);
+
+			// $test = wc_pb_get_bundled_product_map(209);
+			// print_r($test);
+
+			// $product = wc_get_product(209);
+			// print_r($product);
+
 		?>
 
 		<section id="home-featured-bundle">
 			<?php
 				if (function_exists( 'get_field' )) {
 					$featuredbundle = get_field( 'featuredbundle' );
+					// print_r($featuredbundle);
 					if ($featuredbundle) {
 						?>
-							<h3><?php echo esc_html($featuredbundle->name) ?></h3>
+							<h3><?php echo esc_html($featuredbundle->post_title) ?></h3>
+							<p><?php echo esc_html($featuredbundle->post_content) ?></p>
 						<?php
+						// $test = $featuredbundle->get_bundled_item( $featuredbundle->ID );
+						// print_r($test);
 					}
 				}
 			?>
@@ -43,14 +56,12 @@ get_header();
 					'orderby' => 'date',
 					'tax_query' => array(
 						array(
-							'taxonomy' => 'category',
+							'taxonomy' => 'product_cat',
 							'field' => 'term_id',
 							'terms' => array( 49 ),
 							'operator' => 'NOT IN',
 						),
 					),
-
-					// 'category__not_in' => array(49),
 				);
 				
 				$query = new WP_Query( $args );
@@ -82,7 +93,6 @@ get_header();
 			<?php
 				if (function_exists( 'get_field' )) {
 					$terms = get_field('fourcate');
-
 					if ($terms) {
 						?>
 						<ul>

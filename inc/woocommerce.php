@@ -225,3 +225,23 @@ if ( ! function_exists( 'get_outdoors_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+
+// Remove Item Cound from the Products Page
+remove_action(
+	'woocommerce_before_shop_loop',
+	'woocommerce_result_count',
+	20
+);
+
+/**
+* Custom Post Type & Taxonamies
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// add_action(
+// 	'woocommerce_before_shop_loop',
+// 	'go_product_header',
+// 	31
+// );
+

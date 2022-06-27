@@ -61,7 +61,27 @@ get_header();
 
 		<section id="home-featured-categories">
 			<?php
+				if (function_exists( 'get_field' )) {
+					$terms = get_field('fourcate');
 
+					if ($terms) {
+						?>
+						<ul>
+						<?php
+						foreach ($terms as $term) {
+							$thumb_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+							$term_img = wp_get_attachment_url(  $thumb_id );
+							?>
+								<li>
+									<a href="<?php echo esc_url(get_term_link( $term )) ?>">
+											<img src="<?php $term_img ?>">
+										<?php echo esc_html( get_term( $term )->name ); ?>
+									</a>
+								</li>
+							<?php
+						}
+					};
+				}
 			?>
 		</section>
 
@@ -82,5 +102,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

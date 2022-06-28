@@ -28,9 +28,17 @@ get_header();
 					<p> <?php the_sub_field('aboutsubtext'); ?></p>
 				<?php endwhile;
 	
-			endif;
+			endif; ?> 
 
-		endwhile; // End of the loop.
+			<h2><?php the_field('cta_text'); ?></h2>
+
+			<?php 
+				$link = get_field('about_page_cta');
+				if( $link ): ?>
+					<a class="button" href="<?php echo esc_url( $link ); ?>">Contact Us</a>
+			<?php endif; ?>
+			
+		<?php endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->

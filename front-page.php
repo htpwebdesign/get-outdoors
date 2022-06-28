@@ -28,12 +28,28 @@ get_header();
 				if (function_exists( 'get_field' )) {
 					$featuredbundle = get_field( 'featuredbundle' );
 					if ($featuredbundle) {
+						$bundleproduct = wc_get_product($featuredbundle->ID);
 						?>
-							<h3><?php echo esc_html($featuredbundle->post_title) ?></h3>
-							<p><?php echo esc_html($featuredbundle->post_content) ?></p>
+							<article id="home-featured-bundle">
+								<img src="<?php echo wp_get_attachment_url( $bundleproduct->get_image_id() ); ?>" />
+								<h3><?php echo $bundleproduct->get_name() ?></h3>
+								<p><?php echo $bundleproduct->get_description() ?></p>
+								<p><?php echo $bundleproduct->get_price_html(); ?></p>
+								<a href="<?php echo $bundleproduct->get_permalink() ?>">More Info</a>
 						<?php
-					}
-				}
+						$results = WC_PB_DB::query_bundled_items( array(
+							'return'    => 'id=>product_id',
+							'bundle_id' => array( $featuredbundle->ID )
+						) );
+						foreach ($results as $result) {
+							echo get_the_post_thumbnail($result, "medium");
+							echo get_the_title($result);
+						?>
+							</article>
+						<?php
+						};
+					};
+				};
 			?>
 		</section>
 
@@ -105,6 +121,33 @@ get_header();
 
 		<section id="home-upcomming-workshops">
 			<h2>Upcoming Workshops</h2>
+			<?php
+				$args = array(
+						'post_type' 		=> 'tribe_events',
+						'posts_per_page' 	=> 2,
+						'orderby'			=> 'date',
+					);
+					$events_query = new WP_Query( $args );
+					if ( $events_query -> have_posts() ) {
+						while ( $events_query -> have_posts() ) {
+							$events_query -> the_post();
+							print_r($events_query);
+							?>
+							<article>
+								<?php the_post_thumbnail( 'thumbnail' ); ?>
+								<h3><?php the_title(); ?></h3>
+								<?php the_content(); ?>
+
+								<?php echo get_post_meta( get_the_ID(), 'EventStartDate', true); ?>
+								
+								<!-- <?php global $post; 
+								echo $post->EventStartDate ?> -->
+							</article>
+							<?php
+						}
+						wp_reset_postdata();
+					}
+			?>
 		</section>
 
 		<section id="home-faq-cta">
@@ -114,7 +157,7 @@ get_header();
 		</section>
 
 		<section id="home-newsletter-signup">
-			<h3>Newsletter</h3>
+			<h2>Newsletter</h2>
 			<p>Sign up for our newsletter to keep up to date and recieve news about our latest products an upcoming workshops you can attend!</p>
 		</section>
 		<?php

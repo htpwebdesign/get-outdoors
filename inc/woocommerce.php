@@ -227,6 +227,7 @@ if ( ! function_exists( 'get_outdoors_woocommerce_header_cart' ) ) {
 }
 
 
+
 //below are from DYW
 //for single product page
 //for moving Reviews tab into place under description
@@ -249,3 +250,27 @@ if ( is_product() ) {
     remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar');
     }
 }
+
+// Remove Archive Title Prefix
+
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+// Remove Item Cound from the Products Page
+remove_action(
+	'woocommerce_before_shop_loop',
+	'woocommerce_result_count',
+	20
+);
+
+
+//Custom Post Type & Taxonamies
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// Add Image Size
+add_image_size( 'event-archive-img', 300, 200, true );
+
+// add_action(
+// 	'woocommerce_before_shop_loop',
+// 	'go_product_header',
+// 	31
+// );

@@ -1,60 +1,109 @@
 ul.products {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 
-	li.product {
-		list-style: none;
-		position: relative;
-		margin-bottom: 2em;
+  li.product {
+    list-style: none;
+    position: relative;
+    margin-bottom: 2em;
 
-		img {
-			display: block;
-		}
+    img {
+      display: block;
+    }
 
-		.button {
-			display: block;
-		}
-	}
+    .button {
+      display: block;
+    }
+  }
 }
 
 @media screen and (min-width: 48em) {
+  ul.products {
+    li.product {
+      @include column-width(3);
+      float: left;
+      margin-right: $columns__margin;
 
-	ul.products {
+      &.first {
+        clear: both;
+      }
 
-		li.product {
+      &.last {
+        margin-right: 0;
+      }
+    }
+  }
 
-			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
+  ul.products.columns-1 {
+    li.product {
+      float: none;
+      width: 100%;
+    }
+  }
 
-			&.first {
-				clear: both;
-			}
+  @for $i from 2 through 6 {
+    ul.products.columns-#{$i} {
+      li.product {
+        @include column-width($i);
+      }
+    }
+  }
+}
 
-			&.last {
-				margin-right: 0;
-			}
-		}
-	}
+.post-type-archive-product {
+  //   .woocommerce-products-header__title {
+  //     display: none;
+  //   }
 
-	ul.products.columns-1 {
+  .site {
+    display: grid;
 
-		li.product {
-			float: none;
-			width: 100%;
-		}
+    .site-header {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
 
-	}
+    .widget-area {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
 
-	@for $i from 2 through 6 {
+    main {
+      grid-column: 1 / -1;
+      grid-row: 3 / 4;
+    }
+    footer {
+      grid-column: 1 / -1;
+      grid-row: 4 / 5;
+    }
+  }
 
-		ul.products.columns-#{$i} {
+  .site-main {
+    display: grid;
 
-			li.product {
+    .woocommerce-ordering {
+      grid-row: 1 / 2;
+    }
+  }
 
-				@include column-width( $i );
-			}
+  // ul.products li.product .button {
+  //   display: none;
+  // }
 
-		}
-	}
+  //   grid-template-columns: 1fr minmax(auto, 720px) minmax(auto, 280px) 1fr;
+  // grid-template-areas:
+  //   "header header header header"
+  //   "sidebar sidebar sidebar sidebar"
+  //   "main main main main"
+  //   "footer footer footer footer";
+}
+
+.product .woocommerce-LoopProduct-link {
+  position: relative;
+}
+
+.product .woocommerce-LoopProduct-link .onsale {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

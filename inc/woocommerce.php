@@ -227,6 +227,30 @@ if ( ! function_exists( 'get_outdoors_woocommerce_header_cart' ) ) {
 }
 
 
+
+//below are from DYW
+//for single product page
+//for moving Reviews tab into place under description
+//source:https://stackoverflow.com/questions/67509113/move-reviews-outside-of-tabs-woocommerce
+//https://wordpress.stackexchange.com/questions/320191/move-woocommerce-product-tabs-out-of-the-tabs
+remove_action('woocommerce_after_single_product_summary','woocommerce_output_product_data_tabs', 10 );
+add_action( 'woocommerce_after_single_product_summary', 'move_description_reviews_to_new_position', 19);
+
+function move_description_reviews_to_new_position()
+{
+  wc_get_template( 'single-product/tabs/description.php' );
+  comments_template();
+}
+
+//below is for removing sidebar in single product page
+//https://wordpress.stackexchange.com/questions/128514/woocommerce-remove-sidebar-only-on-single-product-page
+add_action('template_redirect', 'remove_sidebar_shop');
+function remove_sidebar_shop() {
+if ( is_product() ) {
+    remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar');
+    }
+}
+
 // Remove Archive Title Prefix
 
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
@@ -250,4 +274,3 @@ add_image_size( 'event-archive-img', 300, 200, true );
 // 	'go_product_header',
 // 	31
 // );
-

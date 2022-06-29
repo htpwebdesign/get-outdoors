@@ -63,7 +63,7 @@ get_header();
 						array(
 							'taxonomy' => 'product_cat',
 							'field' => 'term_id',
-							'terms' => array( 49 ),
+							'terms' => array( 48 ),
 							'operator' => 'NOT IN',
 						),
 					),

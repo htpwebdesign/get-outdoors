@@ -154,6 +154,7 @@ get_header();
 		<section id="home-newsletter-signup">
 			<h2>Newsletter</h2>
 			<p>Sign up for our newsletter to keep up to date and recieve news about our latest products an upcoming workshops you can attend!</p>
+			<?php echo do_shortcode('[jetpack_subscription_form title="Subscribe" subscribe_placeholder="Enter your e-mail here..." subscribe_text="Recieve updates from Get Outdoors!" subscribe_button="Submit" success_message="You are now subscribed!"]'); ?>
 		</section>
 		<?php
 			endwhile;

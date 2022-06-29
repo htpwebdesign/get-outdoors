@@ -78,15 +78,15 @@ get_header();
 						$query -> the_post();
 						$product = wc_get_product( get_the_ID() );
 						?>
-						<article>
-							<a href="<?php echo $product->get_permalink() ?>">
-								<?php
-									the_post_thumbnail( 'medium' );
-								?>
-								<h3><?php echo $product->get_name() ?></h3>
-							</a>
-							<p><?php echo $product->get_price_html(); ?></p>
-						</article>
+							<article>
+								<a href="<?php echo $product->get_permalink() ?>">
+									<?php
+										the_post_thumbnail( 'medium' );
+									?>
+									<h3><?php echo $product->get_name() ?></h3>
+								</a>
+								<p><?php echo $product->get_price_html(); ?></p>
+							</article>
 						<?php
 					}
 					wp_reset_postdata();
@@ -131,23 +131,18 @@ get_header();
 					if ( $events_query -> have_posts() ) {
 						while ( $events_query -> have_posts() ) {
 							$events_query -> the_post();
-							print_r($events_query);
 							?>
 							<article>
 								<?php the_post_thumbnail( 'thumbnail' ); ?>
 								<h3><?php the_title(); ?></h3>
 								<?php the_content(); ?>
-
-								<?php echo get_post_meta( get_the_ID(), 'EventStartDate', true); ?>
-								
-								<!-- <?php global $post; 
-								echo $post->EventStartDate ?> -->
 							</article>
 							<?php
 						}
 						wp_reset_postdata();
 					}
 			?>
+			<a href="events/">See Event Details</a>
 		</section>
 
 		<section id="home-faq-cta">

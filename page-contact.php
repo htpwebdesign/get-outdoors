@@ -17,6 +17,7 @@ get_header();
 			the_post();
 
 			the_title( '<h1>', '</h1>' );
+
 			echo do_shortcode('[contact-form-7 id="35" title="Contact Form"]');
 
 			get_template_part( 'template-parts/location' );
@@ -33,7 +34,6 @@ get_header();
 							<div class="panel">
 							<p><?php echo $faq_answer; ?></p>
 							</div>   
-
 						<?php
 					};
 				};
@@ -43,6 +43,7 @@ get_header();
 		?>
 
 	</main><!-- #main -->
+
 
 	<script type='text/javascript'> 
 

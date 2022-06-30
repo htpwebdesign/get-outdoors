@@ -176,9 +176,9 @@ get_header();
 			if (function_exists('get_field')) {
 				if (get_field('newsletter_sign-up_heading') && get_field('newsletter_sign-up_text')) {
 					echo do_shortcode('[jetpack_subscription_form 
-										title="Newsletter" 
+										title="'. get_field('newsletter_sign-up_heading') .'" 
 										subscribe_placeholder="Enter your e-mail here..." 
-										subscribe_text="temp" 
+										subscribe_text="'. get_field('newsletter_sign-up_text') .'" 
 										subscribe_button="Submit" 
 										success_message="You are now subscribed!"]');
 					};

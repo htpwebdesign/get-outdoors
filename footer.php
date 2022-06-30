@@ -15,14 +15,10 @@
 		<div class="site-info">
 			<?php get_template_part( 'template-parts/location' ); ?>
 			<nav id="footer-social-media">
-				<a id="footer-sm-facebook" href="https://www.facebook.com/">Facebook</a>
-				<a id="footer-sm-twitter" href="https://www.twitter.com/">Twitter</a>
-				<a id="footer-sm-instagram" href="https://www.instagram.com/">Instagram</a>
+				<?php wp_nav_menu( array( 'theme_location' => 'footer-1') ); ?>
 			</nav>
 			<nav id="footer-misc-links">
-				<a id="footer-privacy-policy" href="<?php echo get_permalink( 3 ) ?>">Privacy Policy</a>
-				<a id="home-refundsreturns-policy" href="<?php echo get_permalink( 24 ) ?>">Refunds and Returns Policy</a>	
-				<a id="home-faq-button" href="<?php echo get_permalink( 14 ) ?>#faq">FAQs</a>	
+				<?php wp_nav_menu( array( 'theme_location' => 'footer-2') ); ?>
 			</nav>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

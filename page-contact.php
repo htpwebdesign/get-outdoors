@@ -16,7 +16,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			the_title( '<h1>', '</h1>' );
+      get_template_part( 'template-parts/page-header');
 
 			echo do_shortcode('[contact-form-7 id="35" title="Contact Form"]');
 

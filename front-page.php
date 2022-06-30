@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<h1 class="screen-reader-text">Get Outdoors</h1>
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -27,7 +27,7 @@ get_header();
 						?>
 							<article id="home-featured-bundle">
 								<?php echo wp_get_attachment_image( $bundleproduct->get_image_id(), 'large' ); ?>
-								<h3><?php echo $bundleproduct->get_name() ?></h3>
+								<h2><?php echo $bundleproduct->get_name() ?></h2>
 								<p><?php echo $bundleproduct->get_description() ?></p>
 								<p><?php echo $bundleproduct->get_price_html(); ?></p>
 								<a href="<?php echo $bundleproduct->get_permalink() ?>">See Bundle Info</a>
@@ -42,7 +42,7 @@ get_header();
 						<?php
 							echo get_the_post_thumbnail($result, "medium");
 						?>
-							<h4><?php echo get_the_title($result); ?></h4>
+							<h3><?php echo get_the_title($result); ?></h3>
 						</div>
 						<?php
 						};
@@ -174,18 +174,16 @@ get_header();
 		<section id="home-newsletter-signup">
 		<?php
 			if (function_exists('get_field')) {
-				if (get_field('newsletter_sign-up_heading')) {
-					?>
-					<h2><?php echo get_field('newsletter_sign-up_heading'); ?></h2>
-					<?php
+				if (get_field('newsletter_sign-up_heading') && get_field('newsletter_sign-up_text')) {
+					echo do_shortcode('[jetpack_subscription_form 
+										title="'.echo get_field('newsletter_sign-up_heading');.'" 
+										subscribe_placeholder="Enter your e-mail here..." 
+										subscribe_text="'.echo get_field('newsletter_sign-up_text');.'" 
+										subscribe_button="Submit" 
+										success_message="You are now subscribed!"]');
+					};
 				};
-				if (get_field('newsletter_sign-up_text')) {
-					?>
-					<p><?php echo get_field('newsletter_sign-up_text'); ?></p>
-					<?php
-				};
-			};
-			echo do_shortcode('[jetpack_subscription_form subscribe_placeholder="Enter your e-mail here..." subscribe_button="Submit" success_message="You are now subscribed!"]'); ?>
+		?>
 		</section>
 		<?php
 			endwhile;

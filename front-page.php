@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<h1 class="screen-reader-text">Get Outdoors</h1>
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -26,23 +26,27 @@ get_header();
 						$bundleproduct = wc_get_product($featuredbundle->ID);
 						?>
 							<article id="home-featured-bundle">
-								<img src="<?php echo wp_get_attachment_url( $bundleproduct->get_image_id() ); ?>" />
-								<h3><?php echo $bundleproduct->get_name() ?></h3>
+								<?php echo wp_get_attachment_image( $bundleproduct->get_image_id(), 'large' ); ?>
+								<h2><?php echo $bundleproduct->get_name() ?></h2>
 								<p><?php echo $bundleproduct->get_description() ?></p>
 								<p><?php echo $bundleproduct->get_price_html(); ?></p>
-								<a href="<?php echo $bundleproduct->get_permalink() ?>">More Info</a>
+								<a href="<?php echo $bundleproduct->get_permalink() ?>">See Bundle Info</a>
 						<?php
 						$results = WC_PB_DB::query_bundled_items( array(
 							'return'    => 'id=>product_id',
 							'bundle_id' => array( $featuredbundle->ID )
 						) );
 						foreach ($results as $result) {
+						?> 
+						<div class="featuredbundle-item"> 
+						<?php
 							echo get_the_post_thumbnail($result, "medium");
-							echo get_the_title($result);
 						?>
-							</article>
+							<h3><?php echo get_the_title($result); ?></h3>
+						</div>
 						<?php
 						};
+					?> </article> <?php
 					};
 				};
 			?>
@@ -50,6 +54,13 @@ get_header();
 
 		<section id="home-new-products">
 			<?php
+				if (function_exists('get_field')) {
+					if (get_field('newest_products_heading')) {
+						?> 
+						<h2><?php echo get_field('newest_products_heading'); ?></h2>
+						<?php
+					}
+				}
 				$args = array(
 					'post_type' => 'product',
 					'posts_per_page' => 4,
@@ -66,9 +77,6 @@ get_header();
 				
 				$query = new WP_Query( $args );
 				if ( $query -> have_posts() ) {
-					?>
-						<h2>Newest Products</h2>
-					<?php
 					while ( $query -> have_posts() ) {
 						$query -> the_post();
 						$product = wc_get_product( get_the_ID() );
@@ -99,11 +107,10 @@ get_header();
 						<?php
 						foreach ($terms as $term) {
 							$thumb_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-							$term_img = wp_get_attachment_url(  $thumb_id );
 							?>
 								<li>
 									<a href="<?php echo esc_url(get_term_link( $term )) ?>">
-										<img src="<?php $term_img ?>">
+										<?php echo wp_get_attachment_image( $thumb_id, 'large' ); ?>
 										<p><?php echo esc_html( get_term( $term )->name ); ?></p>
 									</a>
 								</li>
@@ -115,8 +122,14 @@ get_header();
 		</section>
 
 		<section id="home-upcomming-workshops">
-			<h2>Upcoming Workshops</h2>
 			<?php
+				if (function_exists('get_field')) {
+					if (get_field('upcoming_events_heading')) {
+						?>
+						<h2><?php echo get_field('upcoming_events_heading'); ?></h2>
+						<?php
+					};
+				};
 				$args = array(
 						'post_type' 		=> 'tribe_events',
 						'posts_per_page' 	=> 2,
@@ -137,19 +150,40 @@ get_header();
 						wp_reset_postdata();
 					}
 			?>
-			<a href="events/">See Event Details</a>
+			<a href="<?php echo get_post_type_archive_link( 'tribe_events' ) ?>">See Event Details</a>
 		</section>
 
 		<section id="home-faq-cta">
-			<h2>Have Questions?</h2>
-			<p>Check out our Frequently Asked Questions!</p>
+			<?php
+			if (function_exists('get_field')) {
+				if (get_field('faq_cta_heading')) {
+					?>
+					<h2><?php echo get_field('faq_cta_heading'); ?></h2>
+					<?php
+				};
+				if (get_field('faq_cta_text')) {
+					?>
+					<p><?php echo get_field('faq_cta_text'); ?></p>
+					<?php
+				};
+			};
+			?>
 			<a id="home-faq-button" href="<?php echo get_permalink( 14 ) ?>#faq">FAQs</a>
 		</section>
 
 		<section id="home-newsletter-signup">
-			<h2>Newsletter</h2>
-			<p>Sign up for our newsletter to keep up to date and recieve news about our latest products an upcoming workshops you can attend!</p>
-			<?php echo do_shortcode('[jetpack_subscription_form title="Subscribe" subscribe_placeholder="Enter your e-mail here..." subscribe_text="Recieve updates from Get Outdoors!" subscribe_button="Submit" success_message="You are now subscribed!"]'); ?>
+		<?php
+			if (function_exists('get_field')) {
+				if (get_field('newsletter_sign-up_heading') && get_field('newsletter_sign-up_text')) {
+					echo do_shortcode('[jetpack_subscription_form 
+										title="'. get_field('newsletter_sign-up_heading') .'" 
+										subscribe_placeholder="Enter your e-mail here..." 
+										subscribe_text="'. get_field('newsletter_sign-up_text') .'" 
+										subscribe_button="Submit" 
+										success_message="You are now subscribed!"]');
+					};
+				};
+		?>
 		</section>
 		<?php
 			endwhile;
@@ -158,3 +192,5 @@ get_header();
 
 <?php
 get_footer();
+
+// [jetpack_subscription_form title="Subscribe" subscribe_placeholder="Enter your e-mail here..." subscribe_text="Recieve updates from Get Outdoors!" subscribe_button="Submit" success_message="You are now subscribed!"]

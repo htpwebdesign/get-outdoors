@@ -14,18 +14,22 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			get_template_part( 'template-parts/page-header');
 
 			if (have_rows('aboutpagerepeater')) : 
 				while ( have_rows('aboutpagerepeater') ) : the_row(); 
 					$image = get_sub_field('aboutsubimage', false);
-					$size = 'medium';
-					if ( $image ) {
-						echo wp_get_attachment_image($image, $size);
-					} ?>
-	
-					<?php $sub_value = get_sub_field('aboutsubtext'); ?>
-					<p> <?php the_sub_field('aboutsubtext'); ?></p>
+					$size = 'medium'; ?>
+
+					<article>
+						<?php if ( $image ) {
+							echo wp_get_attachment_image($image, $size);
+						} ?>
+
+						<p> <?php the_sub_field('aboutsubtext'); ?></p>
+
+					</article>
+
 				<?php endwhile;
 	
 			endif; ?> 
@@ -34,9 +38,13 @@ get_header();
 
 			<?php 
 				$link = get_field('about_page_cta');
-				if( $link ): ?>
-					<a class="button" href="<?php echo esc_url( $link ); ?>">Contact Us</a>
-			<?php endif; ?>
+				if( $link ): 
+					$link_url = $link['url'];
+					$link_title = $link['title'];
+					$link_target = $link['target'] ? $link['target'] : '_self';
+					?>
+					<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+				<?php endif; ?>
 			
 		<?php endwhile; // End of the loop.
 		?>

@@ -1,22 +1,30 @@
 a {
-	color: $color__link;
+  color: $black;
 
-	&:visited {
-		color: $color__link-visited;
-	}
+  &:visited {
+    color: $black;
+  }
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
 
-	&:focus {
-		outline: thin dotted;
-	}
+  &:focus {
+    outline: thin dotted;
+  }
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+.home-featured-bundle .home-featured-bundle > a {
+  color: green;
+  background-color: $green;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px 8px;
 }

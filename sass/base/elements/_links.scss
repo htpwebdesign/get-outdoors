@@ -1,22 +1,39 @@
 a {
-	color: $color__link;
+  color: $black;
 
-	&:visited {
-		color: $color__link-visited;
-	}
+  &:visited {
+    color: $black;
+  }
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
 
-	&:focus {
-		outline: thin dotted;
-	}
+  &:focus {
+    outline: thin dotted;
+  }
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+.woocommerce-checkout-payment button,
+.tribe-common--breakpoint-medium.tribe-events
+  .tribe-common-c-btn.tribe-events-c-search__button,
+.tribe-events
+  .tribe-events-c-subscribe-dropdown
+  .tribe-events-c-subscribe-dropdown__button-text,
+.swiper-slide a:nth-child(2),
+.wpcf7-form .wpcf7-submit,
+.cart button,
+a.button {
+  color: $white;
+  background-color: $green;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 10px 12px;
 }

@@ -20,11 +20,18 @@ a {
     outline: 0;
   }
 }
-
-.home-featured-bundle .home-featured-bundle > a {
-  color: green;
+.tribe-common--breakpoint-medium.tribe-events
+  .tribe-common-c-btn.tribe-events-c-search__button,
+.tribe-events
+  .tribe-events-c-subscribe-dropdown
+  .tribe-events-c-subscribe-dropdown__button-text,
+.swiper-slide a:nth-child(2),
+.wpcf7-form .wpcf7-submit,
+.cart button,
+a.button {
+  color: $white;
   background-color: $green;
   text-decoration: none;
-  border-radius: 10px;
-  padding: 5px 8px;
+  border-radius: 15px;
+  padding: 10px 12px;
 }

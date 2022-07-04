@@ -30,7 +30,7 @@ get_header();
 								<h2><?php echo $bundleproduct->get_name() ?></h2>
 								<p><?php echo $bundleproduct->get_description() ?></p>
 								<p><?php echo $bundleproduct->get_price_html(); ?></p>
-								<a href="<?php echo $bundleproduct->get_permalink() ?>">See Bundle Info</a>
+								<a class="button" href="<?php echo $bundleproduct->get_permalink() ?>">See Bundle Info</a>
 						<?php
 						$results = WC_PB_DB::query_bundled_items( array(
 							'return'    => 'id=>product_id',
@@ -150,7 +150,7 @@ get_header();
 						wp_reset_postdata();
 					}
 			?>
-			<a href="<?php echo get_post_type_archive_link( 'tribe_events' ) ?>">See Event Details</a>
+			<a class="button" href="<?php echo get_post_type_archive_link( 'tribe_events' ) ?>">See Event Details</a>
 		</section>
 
 		<section id="home-faq-cta">
@@ -168,7 +168,7 @@ get_header();
 				};
 			};
 			?>
-			<a id="home-faq-button" href="<?php echo get_permalink( 14 ) ?>#faq">FAQs</a>
+			<a class="button" id="home-faq-button" href="<?php echo get_permalink( 14 ) ?>#faq">FAQs</a>
 		</section>
 
 		<section id="home-newsletter-signup">

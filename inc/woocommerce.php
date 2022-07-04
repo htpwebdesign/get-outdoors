@@ -255,7 +255,7 @@ if ( is_product() ) {
 
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 
-// Remove Item Cound from the Products Page
+// Remove Item Count from the Products Page
 remove_action(
 	'woocommerce_before_shop_loop',
 	'woocommerce_result_count',

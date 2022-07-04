@@ -29,7 +29,7 @@ get_header();
 						$faq_answer = get_sub_field('faq_answer');
 						?>
 
-					<button class="accordion"><?php echo $faq_question; ?></button>
+					    <button class="accordion"><?php echo $faq_question; ?></button>
 							<div class="panel">
 							<p><?php echo $faq_answer; ?></p>
 							</div>   

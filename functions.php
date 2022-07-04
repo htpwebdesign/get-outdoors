@@ -198,3 +198,6 @@ add_filter( 'use_block_editor_for_post', 'get_outdoors_post_filter', 10, 2);
 
 // Add support for shortcodes in PHP
 add_filter( 'widget_text', 'do_shortcode' );
+
+//for login page customize
+	

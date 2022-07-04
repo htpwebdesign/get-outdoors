@@ -202,3 +202,22 @@ add_filter( 'use_block_editor_for_post', 'get_outdoors_post_filter', 10, 2);
 
 // Add support for shortcodes in PHP
 add_filter( 'widget_text', 'do_shortcode' );
+
+// Load Google Map API
+function my_acf_google_map_api( $api ){
+	$api['key'] = 'AIzaSyDnzRQv_Wyc7fULo-941w0PKG7GEaC97vw';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+//Enqueue the Google Maps script from the Google Server
+wp_enqueue_script( 'google-map',
+'https://maps.googleapis.com/maps/api/js?key=AIzaSyDnzRQv_Wyc7fULo-941w0PKG7GEaC97vw',
+array(),
+_S_VERSION,
+true );
+
+// Enqueue ACF helper code to display the Google Map
+wp_enqueue_script( 'google-map-init', get_template_directory_uri() .
+'/js/google-map-script.js', array( 'google-map', 'jquery' ), _S_VERSION,
+true );

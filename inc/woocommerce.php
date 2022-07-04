@@ -261,15 +261,3 @@ remove_action(
 	'woocommerce_result_count',
 	20
 );
-
-
-
-
-// Add Image Size
-add_image_size( 'event-archive-img', 300, 200, true );
-
-// add_action(
-// 	'woocommerce_before_shop_loop',
-// 	'go_product_header',
-// 	31
-// );

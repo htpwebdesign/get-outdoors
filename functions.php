@@ -46,10 +46,14 @@ function get_outdoors_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	add_image_size( 'event-archive-img', 300, 200, true );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'get-outdoors' ),
+			'footer-1' => esc_html__( 'Footer Social Media', 'get-outdoors' ),
+			'footer-2' => esc_html__( 'Footer Misc. Links', 'get-outdoors' )
 		)
 	);
 
@@ -198,6 +202,3 @@ add_filter( 'use_block_editor_for_post', 'get_outdoors_post_filter', 10, 2);
 
 // Add support for shortcodes in PHP
 add_filter( 'widget_text', 'do_shortcode' );
-
-//for login page customize
-	

@@ -9,7 +9,7 @@
 
 ?>
 
-<div id="locationpart-store-info">
+<section id="store-info">
 <h2>Store Info</h2>
 	<?php
 		if (function_exists('get_field')) {
@@ -27,8 +27,8 @@
 				<?php
 			};
 	?>
-</div>
-<div id="locationpart-store-hours">
+</section>
+<section id="store-hours">
 	<h2>Store Hours</h2>
 		<?php
 			if (get_field('store_hours', 14)) {
@@ -36,6 +36,6 @@
 			};
 		};
 	?>
-</div>
+</section>
 
 <?php

@@ -9,9 +9,9 @@
 
 ?>
 
-<div class="page-header">
+<header class="page-header">
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 	<?php get_outdoors_post_thumbnail(); ?>
 
-</div>
+</header>

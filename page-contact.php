@@ -20,6 +20,7 @@ get_header();
 
 			echo do_shortcode('[contact-form-7 id="35" title="Contact Form"]');
 
+      get_template_part( 'template-parts/location-map' );
 			get_template_part( 'template-parts/location' );
 
 			if (function_exists('have_rows')) {
@@ -29,11 +30,12 @@ get_header();
 						$faq_question = get_sub_field('faq_question');
 						$faq_answer = get_sub_field('faq_answer');
 						?>
-
+        <article class="contact-faq">
 					<button class="accordion"><?php echo $faq_question; ?></button>
 							<div class="panel">
 							<p><?php echo $faq_answer; ?></p>
-							</div>   
+							</div> 
+        </article>  
 						<?php
 					};
 				};

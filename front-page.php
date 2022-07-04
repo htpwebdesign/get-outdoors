@@ -38,15 +38,14 @@ get_header();
 						) );
 						foreach ($results as $result) {
 						?> 
-						<div class="featuredbundle-item"> 
+						<article class="featuredbundle-item"> 
 						<?php
 							echo get_the_post_thumbnail($result, "medium");
 						?>
 							<h3><?php echo get_the_title($result); ?></h3>
-						</div>
+						</article>
 						<?php
 						};
-					?> </article> <?php
 					};
 				};
 			?>

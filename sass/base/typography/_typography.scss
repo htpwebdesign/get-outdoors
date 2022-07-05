@@ -4,11 +4,22 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	font-size: 1rem;
-	line-height: $font__line-height-body;
+  color: $color__text-main;
+  font-family: $font__main;
+  font-size: 1rem;
+  line-height: $font__line-height-body;
 }
 
 @import "headings";
 @import "copy";
+
+p {
+  font-size: 1.87rem;
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 70em) {
+  p {
+    line-height: 1.5;
+  }
+}

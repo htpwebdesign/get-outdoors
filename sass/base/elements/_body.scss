@@ -2,3 +2,20 @@ body {
   background: $color__background-body; // Fallback for when there is no custom background color defined.
   color: $black;
 }
+
+.site-main {
+  margin: 0 1rem;
+}
+
+@media screen and (min-width: 48em) {
+  .site-main {
+    margin: 0 4rem;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .site-main {
+    margin: 0 auto;
+    max-width: 62.5rem;
+  }
+}

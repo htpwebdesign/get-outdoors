@@ -30,6 +30,7 @@ get_header();
 						$faq_question = get_sub_field('faq_question');
 						$faq_answer = get_sub_field('faq_answer');
 						?>
+
         <article class="contact-faq">
 					<button class="accordion"><?php echo $faq_question; ?></button>
 							<div class="panel">

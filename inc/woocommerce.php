@@ -261,4 +261,3 @@ remove_action(
 	'woocommerce_result_count',
 	20
 );
-

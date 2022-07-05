@@ -230,3 +230,11 @@ true );
 wp_enqueue_script( 'google-map-init', get_template_directory_uri() .
 '/js/google-map-script.js', array( 'google-map', 'jquery' ), _S_VERSION,
 true );
+
+
+//display empty star rating
+add_filter('woocommerce_product_get_rating_html',function ( $html, $rating, $count){
+    $label = sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating );
+    $html  ='<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">' . wc_get_star_rating_html( $rating, $count ) . '</div>';
+    return $html;
+},9999,3);

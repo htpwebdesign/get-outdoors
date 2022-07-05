@@ -1,0 +1,9 @@
+#home-featured-bundle {
+    & > img {
+        left: 0;
+        right: 0;
+        top: 5rem;
+        object-fit: cover;
+        position: absolute;
+    }
+}

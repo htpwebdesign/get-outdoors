@@ -20,7 +20,7 @@ get_header();
 
 			echo do_shortcode('[contact-form-7 id="35" title="Contact Form"]');
 
-      ?> <section id="location-sect"> <?php
+      ?> <section class="location-part"> <?php
         get_template_part( 'template-parts/location-map' );
         get_template_part( 'template-parts/location' );
       ?> </section> <?php

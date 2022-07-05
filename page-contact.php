@@ -20,8 +20,10 @@ get_header();
 
 			echo do_shortcode('[contact-form-7 id="35" title="Contact Form"]');
 
-      get_template_part( 'template-parts/location-map' );
-			get_template_part( 'template-parts/location' );
+      ?> <section class="location-part"> <?php
+        get_template_part( 'template-parts/location-map' );
+        get_template_part( 'template-parts/location' );
+      ?> </section> <?php
 
 			if (function_exists('have_rows')) {
 				if ( have_rows('faq_repeater')) {

@@ -121,6 +121,7 @@ span.price{
 
   .site-main {
     display: grid;
+    width:100%;
 
     .woocommerce-ordering {
       grid-row: 1 / 2;
@@ -154,5 +155,5 @@ span.price{
 }
 
 .woocommerce-products-compare-compare-button .dashicons-external{
-  top:13px;
+  top:4px;
 }

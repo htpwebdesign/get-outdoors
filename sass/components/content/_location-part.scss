@@ -22,11 +22,12 @@
 
 @media (min-width: 48rem) {
     .location-part {
+        margin-bottom:2rem;
         display: grid;
         gap: .5rem 2rem;
         grid-template:
                     'map tx1' auto
-                    'map tx2' auto / auto 12rem;
+                    'map tx2' auto / auto 16rem;
         .acf-map {
             margin-right: 2rem;
             margin-bottom: 0;
@@ -34,11 +35,13 @@
         }
         .store-info {
             grid-area: tx1;
-            align-self: end;
+            align-self: start;
+            text-align:right;
         }
         .store-hours {
             grid-area: tx2;
-            align-self: start;
+            align-self: end;
+            text-align:right;
         }
     }
 }

@@ -24,11 +24,11 @@ get_header();
 					$featuredbundle = get_field( 'featuredbundle' );
 					if ($featuredbundle) {
 						$bundleproduct = wc_get_product($featuredbundle->ID);
-						echo wp_get_attachment_image( $bundleproduct->get_image_id(), 'large' ); ?>
+						echo wp_get_attachment_image( $bundleproduct->get_image_id(), 'full' ); ?>
 						<h2><?php echo $bundleproduct->get_name() ?></h2>
-						<p><?php echo $bundleproduct->get_description() ?></p>
+						<p class="bundle-desc"><?php echo $bundleproduct->get_description() ?></p>
 						<p class="bundle-price"><?php echo $bundleproduct->get_price_html(); ?></p>
-						<a class="button" href="<?php echo $bundleproduct->get_permalink() ?>">See Bundle Info</a>
+						<div id="bundled-items-container">
 						<?php
 						$results = WC_PB_DB::query_bundled_items( array(
 							'return'    => 'id=>product_id',
@@ -38,12 +38,18 @@ get_header();
 						?> 
 						<article class="featuredbundle-item"> 
 						<?php
-							echo get_the_post_thumbnail($result, "medium");
+							echo get_the_post_thumbnail($result, "thumbnail");
 						?>
 							<h3><?php echo get_the_title($result); ?></h3>
 						</article>
 						<?php
 						};
+						?>
+						</div>
+						<div class="button-container">
+							<a class="button" href="<?php echo $bundleproduct->get_permalink() ?>">See Bundle Info</a>
+						</div>
+						<?php
 					};
 				};
 			?>

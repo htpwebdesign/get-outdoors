@@ -1,0 +1,30 @@
+.error404 {
+    header {
+        height: unset;
+    }
+    h1 {
+        color: $green;
+        font-size: 2rem;
+
+        position: unset;
+        top: 0;
+        left: 0;
+        transform: unset;
+        margin-top: 2rem;
+    }
+
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .go-back-home {
+        margin: 0;
+    }
+
+    .home-link {
+        margin-bottom: 3rem;
+    }
+}

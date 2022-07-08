@@ -18,11 +18,18 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="page-content">
+				
+
+				<p class="go-back-home"> <?php esc_html_e( 'Please go back to the home.', 'get-outdoors' ) ?> </p>
+
+				<a class="home-link" href="<?php echo get_home_url(); ?>"><?php esc_html_e( 'Home', 'get-outdoors' ) ?></a>
+
+ 
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'get-outdoors' ); ?></p>
 
-					<?php
-					get_search_form();
-					?>
+				<?php
+				get_search_form();
+				?>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->

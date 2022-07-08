@@ -1,4 +1,18 @@
 //entire single product page layout
+.single-product .site-main div.woocommerce-notices-wrapper{
+	.woocommerce-message{
+		background-color: transparent;
+		position:relative;
+	}
+	a{
+		display: block;
+		width:6rem;
+		text-align: center;
+		position: absolute;
+		right:0;
+	}
+}
+
 .single-product .site-main div.type-product{
 	display: grid;
 	grid-template-columns: 50% 50%;
@@ -11,6 +25,17 @@
 	position:relative;
 }
 
+@media only screen and (max-width: 768px){
+	.single-product .site-main div.type-product{
+		grid-template-areas: 
+		"image image"
+		"summary summary"
+		"description description"
+		"reviews reviews"
+		"related related";
+	}
+}
+
 .single-product .site-main div.type-product>span:nth-of-type(1){
 	grid-area:image;
 	position:absolute;
@@ -20,11 +45,14 @@
 
 .single-product .site-main div.type-product .woocommerce-product-gallery{
 	grid-area:image;
+	width:90%;
 }
 
 .single-product .site-main div.type-product .entry-summary{
 	grid-area:summary;
 	display: grid;
+	justify-items: left;
+	align-items:start;
 	grid-template-columns: 50% 50%;
 	grid-template-rows: auto;
 	grid-template-areas: 
@@ -32,8 +60,8 @@
 	  "price reviewintitle"
 	  "summarydescription summarydescription"
 	  "stockstatus stockstatus"
-	  "quantity addtocardbutton"
-	  "compare compare"
+	  "compare instock"
+	  "addtocardbutton addtocardbutton"
 	  "sku sku"
 	  "social social";
 	  h1{
@@ -41,6 +69,7 @@
 	  }
 	  p.price{
 		grid-area:price;
+		margin:0;
 	  }
 	  div.woocommerce-product-rating{
 		grid-area:reviewintitle;
@@ -49,7 +78,47 @@
 		grid-area:summarydescription;
 	  }
 	  p.in-stock{
-		grid-area:quantity;
+		grid-area:instock;
+		margin:0;
+	  }
+	  form.cart{
+		width:100%;
+		grid-area:addtocardbutton;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"choice choice"
+	  		"quantity button";
+		div.quantity{
+			grid-area:quantity;
+			margin-bottom:0.5rem;
+			margin-top:0.5rem;
+			input{
+				height:100%;
+			}			
+		}
+		button{
+			grid-area:button;
+			width:7rem;
+			margin-bottom:0.5rem;
+			margin-top:0.5rem;
+		}
+		table.variations{
+			margin-top:1rem;
+			margin-bottom:1rem;
+			grid-area:choice;
+		}
+	  }
+	  p.woocommerce-products-compare-compare-button{
+		grid-area:compare;
+		margin:0;
+	  }
+	  div.product_meta{
+		grid-area:sku;
+		margin-bottom:1rem;
+	  }
+	  div.addtoany_list{
+		grid-area:social;
 	  }
 }
 
@@ -84,7 +153,7 @@
 .single-product .site-main div.type-product>section.related{
 	grid-area:related;
 	.swiper-container{
-		height:100%;
+		height:max-content;
 		width:100%;
 	}
 

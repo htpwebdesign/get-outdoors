@@ -19,3 +19,70 @@
 		}
 	}
 }
+
+.page-id-22 {
+
+    .woocommerce-info {
+        background-color: $white;
+    }
+
+
+    .checkout_coupon {
+        max-width: 30rem;
+    }
+
+    .col2-set {
+        max-width: 25rem;
+    }
+
+    .woocommerce-billing-fields__field-wrapper {
+        margin: 0 auto;
+    }
+
+    .input-text {
+        width: 100%;
+    }
+
+    .woocommerce-shipping-fields h3{
+        margin-top: 4rem;
+    }
+    
+    .woocommerce-checkout-review-order-table {
+        max-width: 25rem;
+        margin: 0 auto;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    .cart_item .product-name {
+       width: 100%;
+    }
+
+    .order-total {
+        font-size: 1.5rem;
+    }
+
+    .woocommerce-shipping-methods  {
+        margin: 0;
+        padding: 0;
+        width: 8rem;
+    }
+
+    .payment_method_stripe,
+    .place-order {
+        max-width: 40rem;
+        margin: 0 auto;
+    }
+
+    .woocommerce-checkout-payment {
+        margin-top: 3rem;
+    }
+
+    .wc_payment_methods {
+        margin: 0;        
+    }
+}
+
+

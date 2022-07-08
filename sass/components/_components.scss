@@ -10,9 +10,10 @@
 --------------------------------------------- */
 @import "content/location-part";
 
-/* Events
+/* Page Banner
 --------------------------------------------- */
-@import "content/events";
+@import "content/page-banner";
+
 /* Star Rating
 --------------------------------------------- */
 @import "content/starrating";
@@ -24,6 +25,10 @@
 /* contact form
 --------------------------------------------- */
 @import "content/contactform";
+
+/* Featured Bundle
+--------------------------------------------- */
+@import "content/featured-bundle";
 
 /* Comments
 --------------------------------------------- */
@@ -44,4 +49,3 @@
 /* Galleries
 --------------------------------------------- */
 @import "media/galleries";
-

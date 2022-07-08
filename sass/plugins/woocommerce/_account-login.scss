@@ -1,0 +1,33 @@
+.page-id-23 {
+
+        .site-main{
+            // margin: 0;
+            // background-image: url("images/login.jpeg");
+            // background-position: top;
+        }
+    
+        .entry-content,
+        .woocommerce-form-login .woocommerce-form-row {
+            display: flex;
+            flex-direction: column;
+        }
+        .entry-content {
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .woocommerce-Input {
+            width: 16rem;
+        }
+    
+        .woocommerce-form-login .woocommerce-form-row {
+            justify-content: 	flex-start;
+            align-items: start;
+        }
+    
+        .woocommerce-form__label-for-checkbox span {
+            margin-right: 1rem;
+        }
+    
+    
+    }

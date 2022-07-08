@@ -1,86 +1,201 @@
-.single-product {
-
-	div.product {
-		position: relative;
-
-		.woocommerce-product-gallery {
-			position: relative;
-			float: left;
-
-			.woocommerce-product-gallery__trigger {
-				position: absolute;
-				top: 2em;
-				right: 1em;
-				display: block;
-				z-index: 99;
-			}
-
-			.flex-viewport {
-				margin-bottom: 1em;
-			}
-
-			.flex-control-thumbs {
-				margin: 0;
-				padding: 0;
-
-				li {
-					list-style: none;
-					cursor: pointer;
-					float: left;
-
-					img {
-						opacity: 0.5;
-
-						&.flex-active {
-							opacity: 1;
-						}
-					}
-
-					&:hover {
-
-						img {
-							opacity: 1;
-						}
-					}
-				}
-			}
-
-			@for $i from 2 through 5 {
-
-				&.woocommerce-product-gallery--columns-#{$i} {
-
-					.flex-control-thumbs {
-
-						li {
-
-							@include column-width($i);
-
-							&:nth-child(#{$i}n) {
-								margin-right: 0;
-							}
-
-							&:nth-child(#{$i}n+1) {
-								clear: both;
-							}
-						}
-					}
-				}
-			}
-		}
+//entire single product page layout
+.single-product .site-main div.woocommerce-notices-wrapper{
+	.woocommerce-message{
+		background-color: transparent;
+		position:relative;
+	}
+	a{
+		display: block;
+		width:6rem;
+		text-align: center;
+		position: absolute;
+		right:0;
 	}
 }
 
-.stock {
+.single-product .site-main div.type-product{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	  "image summary"
+	  "description description"
+	  "reviews reviews"
+	  "related related";
+	position:relative;
+}
 
-	&:empty::before {
-		display: none;
+@media only screen and (max-width: 768px){
+	.single-product .site-main div.type-product{
+		grid-template-areas: 
+		"image image"
+		"summary summary"
+		"description description"
+		"reviews reviews"
+		"related related";
+	}
+}
+
+.single-product .site-main div.type-product>span:nth-of-type(1){
+	grid-area:image;
+	position:absolute;
+	top:3rem;
+	z-index: 10;
+}
+
+.single-product .site-main div.type-product .woocommerce-product-gallery{
+	grid-area:image;
+	width:90%;
+}
+
+.single-product .site-main div.type-product .entry-summary{
+	grid-area:summary;
+	display: grid;
+	justify-items: left;
+	align-items:start;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	  "ptitle ptitle"
+	  "price reviewintitle"
+	  "summarydescription summarydescription"
+	  "stockstatus stockstatus"
+	  "compare instock"
+	  "addtocardbutton addtocardbutton"
+	  "sku sku"
+	  "social social";
+	  h1{
+		grid-area:ptitle;
+	  }
+	  p.price{
+		grid-area:price;
+		margin:0;
+	  }
+	  div.woocommerce-product-rating{
+		grid-area:reviewintitle;
+	  }
+	  div.woocommerce-product-details__short-description{
+		grid-area:summarydescription;
+	  }
+	  p.in-stock{
+		grid-area:instock;
+		margin:0;
+	  }
+	  form.cart{
+		width:100%;
+		grid-area:addtocardbutton;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"choice choice"
+	  		"quantity button";
+		div.quantity{
+			grid-area:quantity;
+			margin-bottom:0.5rem;
+			margin-top:0.5rem;
+			input{
+				height:100%;
+			}			
+		}
+		button{
+			grid-area:button;
+			width:7rem;
+			margin-bottom:0.5rem;
+			margin-top:0.5rem;
+		}
+		table.variations{
+			margin-top:1rem;
+			margin-bottom:1rem;
+			grid-area:choice;
+		}
+	  }
+	  p.woocommerce-products-compare-compare-button{
+		grid-area:compare;
+		margin:0;
+	  }
+	  div.product_meta{
+		grid-area:sku;
+		margin-bottom:1rem;
+	  }
+	  div.addtoany_list{
+		grid-area:social;
+	  }
+}
+
+.single-product .site-main div.type-product>h2{
+	grid-area:description;
+}
+
+.single-product .site-main div.type-product>p{
+	grid-area:description;
+	margin-top: 6rem;
+}
+
+.single-product .site-main div.type-product>.woocommerce-Reviews{
+	grid-area:reviews;
+	p.woocommerce-noreviews{
+		background-color:transparent ;
 	}
 
-	&.in-stock {
-		color: $woocommerce__color-success;
+	p.comment-form-comment #comment{
+		resize:none;
 	}
 
-	&.out-of-stock {
-		color: $woocommerce__color-error;
+	.form-submit .submit{
+		color: $white;
+		background-color: $green;
+		text-decoration: none;
+		border-radius: 15px;
+		padding: 10px 12px;
+	}
+}
+
+.single-product .site-main div.type-product>section.related{
+	grid-area:related;
+	.swiper-container{
+		height:max-content;
+		width:100%;
+	}
+
+	.swiper-container .swiper-slide li>a img{
+		height:10rem;
+		object-fit: contain;
+	}
+
+	.wt-related-products .wt-crp-heading{
+		text-align:left;
+	}
+
+	.woocommerce-review-link{
+		color:black;
+		background-color: transparent;
+		border-radius: initial;
+		padding:initial;
+	}
+
+	.woocommerce-products-compare-compare-link{
+		color:black;
+		background-color: transparent;
+		border-radius: initial;
+		padding:initial;
+		position:relative;
+		top:4px;
+	}
+}
+
+//product image style
+.woocommerce-product-gallery{
+	figure .woocommerce-product-gallery__image img{
+		width:100%;
+	}
+	.flex-control-nav{
+		display: flex;
+		justify-content: left;
+		margin-left:0;
+		padding-left:0;
+		li{
+			list-style-type: none;
+			margin-right:0.4rem;
+		}
 	}
 }

@@ -1,8 +1,9 @@
 //entire single product page layout
 .single-product .site-main div.woocommerce-notices-wrapper{
-	.woocommerce-message{
+	.woocommerce-message, .woocommerce-error{
 		background-color: transparent;
 		position:relative;
+		list-style:none;
 	}
 	a{
 		display: block;
@@ -33,6 +34,15 @@
 		"description description"
 		"reviews reviews"
 		"related related";
+	}
+	.single-product .site-main .swiper-container .swiper-wrapper .swiper-slide{
+		width:50%!important;
+	}
+}
+
+@media only screen and (max-width: 450px){
+	.single-product .site-main .swiper-container .swiper-wrapper .swiper-slide{
+		width:100%!important;
 	}
 }
 

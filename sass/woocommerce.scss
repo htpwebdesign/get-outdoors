@@ -33,6 +33,21 @@ $woocommerce__color-info: #3d9cd2;
 @import "plugins/woocommerce/checkout";
 
 /**
+ * Checkout
+ */
+ @import "plugins/woocommerce/cart";
+
+ /**
+ * Account Login
+ */
+ @import "plugins/woocommerce/account-login";
+
+ /**
+ * Events
+ */
+ @import "plugins/woocommerce/events";
+
+/**
  * General WooCommerce components
  */
 @import "plugins/woocommerce/components";

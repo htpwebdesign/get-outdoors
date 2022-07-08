@@ -27,6 +27,7 @@ get_header();
 
 			if (function_exists('have_rows')) {
 				if ( have_rows('faq_repeater')) {
+          echo "<h1>FAQ</h1>";
 					while( have_rows('faq_repeater')) {
 						the_row();
 						$faq_question = get_sub_field('faq_question');

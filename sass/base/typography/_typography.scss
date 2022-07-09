@@ -14,12 +14,21 @@ textarea {
 @import "copy";
 
 p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
+}
+
+a {
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 70em) {
   p {
+    font-size: 1.1rem;
     line-height: 1.8;
+  }
+
+  a {
+    font-size: 1.1rem;
   }
 }

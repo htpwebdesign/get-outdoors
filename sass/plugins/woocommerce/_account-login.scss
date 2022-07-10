@@ -1,33 +1,120 @@
 .page-id-23 {
+  // Dashboard
+  .woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    margin: 0 0 5rem;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-        .site-main{
-            // margin: 0;
-            // background-image: url("images/login.jpeg");
-            // background-position: top;
-        }
-    
-        .entry-content,
-        .woocommerce-form-login .woocommerce-form-row {
-            display: flex;
-            flex-direction: column;
-        }
-        .entry-content {
-            justify-content: center;
-            align-items: center;
-        }
-    
-        .woocommerce-Input {
-            width: 16rem;
-        }
-    
-        .woocommerce-form-login .woocommerce-form-row {
-            justify-content: 	flex-start;
-            align-items: start;
-        }
-    
-        .woocommerce-form__label-for-checkbox span {
-            margin-right: 1rem;
-        }
-    
-    
+  .woocommerce-MyAccount-navigation li a {
+    color: $green;
+  }
+
+  .woocommerce-MyAccount-content {
+    max-width: 40rem;
+  }
+
+  .woocommerce-MyAccount-content p {
+    font-size: 1.3rem;
+  }
+
+  .woocommerce-MyAccount-content a {
+    color: $green;
+  }
+
+  .entry-content,
+  .woocommerce-form-login .woocommerce-form-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .entry-content {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .woocommerce-Input {
+    width: 16rem;
+  }
+
+  .woocommerce-form-login .woocommerce-form-row {
+    justify-content: flex-start;
+    align-items: start;
+  }
+
+  .woocommerce-form__label-for-checkbox span {
+    margin-right: 1rem;
+  }
+
+  .woocommerce-error,
+  .woocommerce-error a {
+    color: $white;
+  }
+
+  .woocommerce-error {
+    background-color: $green;
+    padding: 1rem;
+    list-style: none;
+  }
+
+  .woocommerce-error a {
+    margin-left: 1rem;
+  }
+
+  // Downloads
+  .woocommerce-MyAccount-navigation-link--downloads {
+    display: none;
+  }
+
+  // Orders
+  .woocommerce-orders-table__cell-order-actions {
+    padding: 0.8rem 0 3rem;
+  }
+
+  // Address
+  .woocommerce-Address-title h3 {
+    margin-bottom: 0.5rem;
+  }
+  .input-text {
+    width: 100%;
+  }
+
+  // Payment Methods
+  .woocommerce-MyAccount-content .button {
+    color: $white;
+  }
+
+  .woocommerce-PaymentMethod--actions {
+    padding: 1.5rem 0;
+  }
+
+  .woocommerce-PaymentMethod--actions::before {
+    display: none;
+  }
+
+  .woocommerce-PaymentMethods {
+    margin: 0 auto 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  // Account Details {
+  fieldset {
+    margin-top: 4rem;
+  }
+
+  // Lost Password Page
+  .woocommerce-message {
+    background-color: $white;
+  }
+
+  @media screen and (min-width: 48rem) {
+    // Order
+    .woocommerce-orders-table__cell-order-actions {
+      padding: 1rem;
     }
+  }
+}

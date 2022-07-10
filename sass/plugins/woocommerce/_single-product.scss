@@ -91,7 +91,7 @@
 		grid-area:instock;
 		margin:0;
 	  }
-	  form.cart{
+	  form.cart:not(.bundle_form){
 		width:100%;
 		grid-area:addtocardbutton;
 		display: grid;
@@ -119,6 +119,28 @@
 			grid-area:choice;
 		}
 	  }
+
+	  form.bundle_form{
+		width:100%;
+		grid-area:addtocardbutton;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows:auto;
+		
+		div.bundle_data .bundle_error{
+			background-color: transparent;
+		}
+		div.bundle_data .bundle_button{
+			display: flex;
+			.quantity{
+				input{
+					width:3rem;
+					margin-right:2rem;
+				}
+			}
+		}
+	  }
+
 	  p.woocommerce-products-compare-compare-button{
 		grid-area:compare;
 		margin:0;

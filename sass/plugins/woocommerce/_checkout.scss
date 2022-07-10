@@ -1,88 +1,93 @@
 @media screen and (min-width: 768px) {
+  .col2-set {
+    .form-row-first {
+      float: left;
+      margin-right: $columns__margin;
+    }
 
-	.col2-set {
+    .form-row-last {
+      float: right;
+      margin-right: 0;
+    }
 
-		.form-row-first {
-			float: left;
-			margin-right: $columns__margin;
-		}
-
-		.form-row-last {
-			float: right;
-			margin-right: 0;
-		}
-
-		.form-row-first,
-		.form-row-last {
-
-			@include column-width(2);
-		}
-	}
+    .form-row-first,
+    .form-row-last {
+      @include column-width(2);
+    }
+  }
 }
 
 .page-id-22 {
+  .woocommerce-info {
+    background-color: $white;
+  }
 
-    .woocommerce-info {
-        background-color: $white;
-    }
+  .checkout_coupon {
+    max-width: 30rem;
+  }
 
+  .col2-set {
+    max-width: 25rem;
+  }
 
-    .checkout_coupon {
-        max-width: 30rem;
-    }
+  .woocommerce-billing-fields__field-wrapper {
+    margin: 0 auto;
+  }
 
-    .col2-set {
-        max-width: 25rem;
-    }
+  .input-text {
+    width: 100%;
+  }
 
-    .woocommerce-billing-fields__field-wrapper {
-        margin: 0 auto;
-    }
+  .woocommerce-shipping-fields h3 {
+    margin-top: 4rem;
+  }
 
-    .input-text {
-        width: 100%;
-    }
+  .woocommerce-checkout-review-order-table {
+    max-width: 25rem;
+    margin: 0 auto;
+  }
 
-    .woocommerce-shipping-fields h3{
-        margin-top: 4rem;
-    }
-    
-    .woocommerce-checkout-review-order-table {
-        max-width: 25rem;
-        margin: 0 auto;
-    }
+  th {
+    text-align: left;
+  }
 
-    th {
-        text-align: left;
-    }
+  .cart_item .product-name {
+    width: 100%;
+  }
 
-    .cart_item .product-name {
-       width: 100%;
-    }
+  .order-total {
+    font-size: 1.5rem;
+  }
 
-    .order-total {
-        font-size: 1.5rem;
-    }
+  .woocommerce-shipping-methods {
+    margin: 0;
+    padding: 0;
+    width: 8rem;
+  }
 
-    .woocommerce-shipping-methods  {
-        margin: 0;
-        padding: 0;
-        width: 8rem;
-    }
+  .payment_method_stripe,
+  .place-order {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
 
-    .payment_method_stripe,
-    .place-order {
-        max-width: 40rem;
-        margin: 0 auto;
-    }
+  .woocommerce-checkout-payment {
+    margin-top: 3rem;
+  }
 
-    .woocommerce-checkout-payment {
-        margin-top: 3rem;
-    }
+  .wc_payment_methods {
+    margin: 0;
+  }
 
-    .wc_payment_methods {
-        margin: 0;        
+  // Error
+  .woocommerce-error {
+    background-color: $green;
+    color: $white;
+    padding: 1rem;
+    list-style: none;
+
+    a {
+      color: $white;
     }
+  }
 }
-
-

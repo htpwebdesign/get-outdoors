@@ -1,0 +1,129 @@
+@import "../../abstracts/variables/colors";
+
+// Product Comparison Widget in Sidebar
+.woocommerce-products-compare-widget {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+
+    li {
+      a.remove-compare-product {
+        opacity: 1;
+      }
+    }
+  }
+
+  .product-link {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+      width: 80px;
+      margin-left: 0;
+    }
+
+    h3 {
+      width: 100%;
+      color: $black;
+    }
+  }
+
+  .woocommerce-products-compare-remove-all-products {
+    color: #ffffff;
+    background-color: #587767;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 10px 12px;
+  }
+
+  .woocommerce-products-compare-remove-all-products,
+  .woocommerce-products-compare-widget-compare-button {
+    display: block;
+    max-width: 300px;
+    margin: 0.5rem auto;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 55.625rem) {
+  .woocommerce-products-compare-widget {
+    .product-link {
+      display: block;
+    }
+
+    ul {
+      li {
+        a.remove-compare-product {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+// Product Comparison Checkbox on Product/Category Page
+.woocommerce-products-compare-compare-button {
+  .woocommerce-products-compare-checkbox:checked {
+    accent-color: $green;
+  }
+
+  .woocommerce-products-compare-compare-link {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $green;
+    }
+  }
+}
+
+// Product Comparison Page
+.woocommerce-products-compare-content {
+  .price,
+  span.stock-status.in-stock {
+    color: $green;
+  }
+
+  .add_to_cart_button {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  table {
+    thead {
+      th:first-child {
+        text-align: center;
+      }
+
+      tr:nth-child(2n) {
+        background-color: #f5f5f5;
+      }
+
+      .products:first-of-type {
+        .product {
+          vertical-align: bottom;
+        }
+      }
+    }
+
+    tfoot {
+      td {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .product {
+    .onsale {
+      position: absolute;
+      right: auto;
+      left: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

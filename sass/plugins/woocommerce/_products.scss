@@ -11,43 +11,47 @@ ul.products {
 
     img {
       display: block;
-      margin:0 auto;
-      height:7rem;
-      object-fit:contain;
+      margin: 0 auto;
+      height: 7rem;
+      object-fit: contain;
     }
 
-    h2{
-      text-align:center;
-      font-size:1.5rem;
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
     }
 
     .button {
       display: block;
       text-align: center;
-      width:100%;
+      width: 100%;
       margin-left: auto;
-      margin-right:auto;
-      margin-top:1rem;
+      margin-right: auto;
+      margin-top: 1rem;
     }
   }
 }
 
 @media screen and (max-width: 1390px) {
-  ul.products li.product .button{
-    width:70%;
+  ul.products li.product .button {
+    width: 70%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  ul.products li.product .button{
-    width:50%;
+  ul.products li.product .button {
+    width: 50%;
   }
 }
 
 @media screen and (min-width: 48em) {
   ul.products {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+
     li.product {
-      @include column-width(3);
+      // @include column-width(3);
+      width: auto;
       float: left;
       margin-right: $columns__margin;
       &.first {
@@ -70,25 +74,43 @@ ul.products {
   @for $i from 2 through 6 {
     ul.products.columns-#{$i} {
       li.product {
+        // @include column-width($i);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 70em) {
+  ul.products {
+    display: inline;
+
+    li.product {
+      @include column-width(3);
+    }
+  }
+
+  @for $i from 2 through 6 {
+    ul.products.columns-#{$i} {
+      li.product {
         @include column-width($i);
       }
     }
   }
 }
 
-.starandcount{
-  width:max-content;
+.starandcount {
+  width: max-content;
   display: flex;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-span.price{
-  margin:0 auto;
-  text-align:center;
+span.price {
+  margin: 0 auto;
+  text-align: center;
 }
 
-.woocommerce-products-compare-compare-button{
-  text-align:center;
+.woocommerce-products-compare-compare-button {
+  text-align: center;
 }
 
 .post-type-archive-product {
@@ -96,36 +118,58 @@ span.price{
   //     display: none;
   //   }
 
+  // .site {
+  //   display: grid;
+
+  //   .site-header {
+  //     grid-column: 1 / -1;
+  //     grid-row: 1 / 2;
+  //   }
+
+  //   .widget-area {
+  //     grid-column: 1 / -1;
+  //     grid-row: 2 / 3;
+  //   }
+
+  //   main {
+  //     grid-column: 1 / -1;
+  //     grid-row: 3 / 4;
+  //   }
+  //   footer {
+  //     grid-column: 1 / -1;
+  //     grid-row: 4 / 5;
+  //   }
+  // }
+
   .site {
     display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar sidebar"
+      "main main"
+      "footer footer";
+  }
 
-    .site-header {
-      grid-column: 1 / -1;
-      grid-row: 1 / 2;
-    }
+  .site-header {
+    grid-area: header;
+  }
 
-    .widget-area {
-      grid-column: 1 / -1;
-      grid-row: 2 / 3;
-    }
+  .site-main {
+    grid-area: main;
+    overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+  }
 
-    main {
-      grid-column: 1 / -1;
-      grid-row: 3 / 4;
-    }
-    footer {
-      grid-column: 1 / -1;
-      grid-row: 4 / 5;
-    }
+  .widget-area {
+    grid-area: sidebar;
+  }
+
+  .site-footer {
+    grid-area: footer;
   }
 
   .site-main {
     display: grid;
-    width:100%;
-
-    .woocommerce-ordering {
-      grid-row: 1 / 2;
-    }
+    width: 100%;
   }
 
   // ul.products li.product .button {
@@ -149,11 +193,42 @@ span.price{
   top: 20%;
   left: 40%;
   background-color: yellow;
-  padding-left:0.3rem;
-  padding-right:0.3rem;
-  transform:rotate(-45deg);
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  transform: rotate(-45deg);
 }
 
-.woocommerce-products-compare-compare-button .dashicons-external{
-  top:4px;
+.woocommerce-products-compare-compare-button .dashicons-external {
+  top: 4px;
+}
+
+@media screen and (min-width: 48rem) {
+  .post-type-archive-product {
+    .site-main {
+      margin: 0;
+      padding: 1.5rem 1rem;
+    }
+
+    .site {
+      grid-template-columns: ($size__site-sidebar) auto;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    }
+  }
+}
+
+nav.woocommerce-pagination {
+  ul.page-numbers {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  li {
+    padding: 0.5rem;
+  }
 }

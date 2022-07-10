@@ -10,10 +10,6 @@
 --------------------------------------------- */
 @import "content/location-part";
 
-/* Page Banner
---------------------------------------------- */
-@import "content/page-banner";
-
 /* Star Rating
 --------------------------------------------- */
 @import "content/starrating";
@@ -38,6 +34,10 @@
 --------------------------------------------- */
 @import "widgets/widgets";
 
+/* Sidebar
+--------------------------------------------- */
+@import "widgets/sidebar";
+
 /* Media
 --------------------------------------------- */
 @import "media/media";
@@ -52,4 +52,8 @@
 
 /* Footer
 --------------------------------------------- */
-@import "content/footer";
+@import "footer/footer";
+
+/* Page Banner
+--------------------------------------------- */
+@import "header/page-banner";

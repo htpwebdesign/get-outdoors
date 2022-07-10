@@ -23,6 +23,11 @@ $woocommerce__color-info: #3d9cd2;
 @import "plugins/woocommerce/products";
 
 /**
+ * Category
+ */
+@import "plugins/woocommerce/category";
+
+/**
  * Single product
  */
 @import "plugins/woocommerce/single-product";
@@ -35,22 +40,22 @@ $woocommerce__color-info: #3d9cd2;
 /**
  * Checkout
  */
- @import "plugins/woocommerce/cart";
+@import "plugins/woocommerce/cart";
 
- /**
+/**
  * Account Login
  */
- @import "plugins/woocommerce/account-login";
+@import "plugins/woocommerce/account-login";
 
- /**
+/**
  * Events
  */
- @import "plugins/woocommerce/events";
+@import "plugins/woocommerce/events";
 
-  /**
+/**
  * 404
  */
- @import "plugins/woocommerce/404";
+@import "plugins/woocommerce/404";
 
 /**
  * General WooCommerce components

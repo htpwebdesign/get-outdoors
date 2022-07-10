@@ -1,0 +1,51 @@
+.widget-area {
+  #block-3 {
+    margin: 1.5rem 1rem;
+
+    .wp-container-2,
+    .wc-block-product-categories__dropdown {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    select {
+      width: 95%;
+    }
+  }
+
+  #block-4 {
+    display: none;
+  }
+
+  #compared_products-2 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .widget-area {
+    margin-left: 1rem;
+
+    #block-3 {
+      display: none;
+    }
+
+    #block-4 {
+      display: inline;
+    }
+
+    #compared_products-2 {
+      display: inline;
+    }
+
+    ul.wc-block-product-categories-list {
+      margin: 0;
+      padding-left: 2rem;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

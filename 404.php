@@ -18,19 +18,19 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="page-content">
-				
-
-				<p class="go-back-home"> <?php esc_html_e( 'Please go back to the home.', 'get-outdoors' ) ?> </p>
-
-				<a class="home-link" href="<?php echo get_home_url(); ?>"><?php esc_html_e( 'Home', 'get-outdoors' ) ?></a>
-
- 
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'get-outdoors' ); ?></p>
-
-				<?php
-				get_search_form();
+				<?php 
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+				 
+				if ( has_custom_logo() ) {
+					echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+				} else {
+					echo '<h1>' . get_bloginfo('name') . '</h1>';
+				}
 				?>
 
+				<p class="go-back-home"> <?php esc_html_e( 'Please go back to the home.', 'get-outdoors' ) ?> </p>
+				<a class="button home-link" href="<?php echo get_home_url(); ?>"><?php esc_html_e( 'Home', 'get-outdoors' ) ?></a>
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
 

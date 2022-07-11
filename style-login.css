@@ -1,0 +1,25 @@
+body{
+    /* height:50rem; */
+    background: linear-gradient(45deg, #2f6164, #b45d51);
+    /* background-repeat: no-repeat; */
+    background-attachment:fixed;
+}
+body.login div#login form#loginform {
+    background-color:#ebd9b93a;
+    border-style: none;
+    border-radius:2rem;
+}
+
+body.login div#login p#nav a, body.login div#login p#backtoblog a{
+    color:white;
+}
+
+body.login div#login .privacy-policy-page-link a{
+    color:white;
+}
+
+body.login p.message{
+    border-left:none;
+    border-radius:2rem;
+    background-color:#ebd9b93a;
+}

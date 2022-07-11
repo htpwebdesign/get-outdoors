@@ -346,3 +346,18 @@ function my_login_stylesheet() {
 	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+//below is for turning off content editor for
+//Company History,Contact,Homepage, Shop pages
+add_action( 'admin_init', 'hide_editor' );
+function hide_editor() {
+  $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+  if( !isset( $post_id ) ) return;
+  if($post_id == 78 || $post_id == 14 || $post_id == 88 || $post_id == 20){
+    remove_post_type_support('page', 'editor');
+  }
+}
+
+//below is for editting block editor styles
+add_editor_style('editor-styles.css');
+add_theme_support( 'editor-styles' );

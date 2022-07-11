@@ -89,7 +89,37 @@
     margin: 0;
   }
 
-  // Error
+  // // Order Received
+  .woocommerce-thankyou-order-details {
+    margin: 0;
+  }
+
+  .woocommerce-order-details {
+    margin-top: 3rem;
+  }
+
+  .woocommerce-customer-details {
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 70em) {
+    .site-main {
+      margin: 0 10rem;
+    }
+
+    .woocommerce-order-details {
+      margin-top: 4rem;
+    }
+
+    .woocommerce-columns--addresses {
+      max-width: unset;
+      display: flex;
+      flex-direction: row;
+      gap: 10rem;
+    }
+  }
+
+  // Errors
   .woocommerce-error {
     background-color: $green;
     color: $white;

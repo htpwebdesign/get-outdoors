@@ -1,81 +1,114 @@
-// Event Archive Page
 .post-type-archive-tribe_events,
 .single-tribe_events {
-    .tribe-events-calendar-list__event-date-tag{
-        display: none;
-    }
+  font-family: Montserrat;
+  .tribe-common-l-container {
+    padding-top: 0;
+  }
 
-    article {
-        margin-bottom: 2rem;
-    }
-    .tribe-events-calendar-list__event-header {
-        margin-bottom: 1rem;
-        }
+  .tribe-events-calendar-list__event-date-tag {
+    display: none;
+  }
 
-    .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event {
-        flex-direction: row;
-    }
+  .tribe-events-header__events-bar {
+    display: none;
+  }
 
-    .tribe-events-calendar-list__event-featured-image-wrapper img {
-        width: 314px;
-        height: 216px;
-        margin: 0 auto;
-    }
-    .tribe-events-calendar-list__event-description
-     {
-        display: block!important;
-        visibility: visible;
-    }
+  .tribe-events-before-html h2 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
 
-    .tribe-events-calendar-list-nav {
-        display: none;
-    }
+  .tribe-events-c-top-bar__datepicker-mobile {
+    font-size: 1.2rem;
+  }
 
-    .tribe-events {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem auto 3rem;
-    }
+  article {
+    margin-bottom: 2rem;
+  }
+  .tribe-events-calendar-list__event-header {
+    margin-bottom: 1rem;
+  }
 
-    .tribe-common .tribe-common-c-btn-border {
-        border: none;
-    }
+  .tribe-common--breakpoint-medium.tribe-events
+    .tribe-events-calendar-list__event {
+    flex-direction: row;
+  }
 
-     .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover {
-        background-color: $white;
-    }
+  .tribe-events-calendar-list__event-featured-image-wrapper img {
+    width: 314px;
+    height: 216px;
+    margin: 0 auto;
+  }
+  .tribe-events-calendar-list__event-description {
+    display: block !important;
+    visibility: visible;
+  }
 
+  .tribe-events-calendar-list-nav {
+    display: none;
+  }
+
+  .tribe-events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto 3rem;
+  }
+
+  .tribe-common .tribe-common-c-btn-border {
+    border: none;
+  }
+
+  .tribe-events
+    .tribe-events-c-subscribe-dropdown
+    .tribe-events-c-subscribe-dropdown__button:focus-within,
+  .tribe-events
+    .tribe-events-c-subscribe-dropdown
+    .tribe-events-c-subscribe-dropdown__button:hover {
+    background-color: $white;
+  }
+
+  .tribe-events-c-subscribe-dropdown__button-icon {
+    display: none;
+  }
+
+  .tribe-events .tribe-events-c-subscribe-dropdown {
+    margin: 0 auto;
+  }
+
+  .tribe-common-c-svgicon {
+    display: none;
+  }
+
+  .tribe-events
+    .tribe-events-c-subscribe-dropdown
     .tribe-events-c-subscribe-dropdown__button-icon {
-        display: none;
+    display: none;
+  }
+
+  @media screen and (min-width: 48em) {
+    .tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+      padding-top: 0;
+    }
+    .tribe-events {
+      //   margin: 3rem auto 5rem;
     }
 
-    .tribe-events .tribe-events-c-subscribe-dropdown  {
-        margin: 0 auto;
+    .tribe-events-before-html h2 {
+      font-size: 2rem;
     }
 
-    .tribe-common-c-svgicon {
-        display: none;
+    .tribe-events-c-top-bar__datepicker-mobile {
+      font-size: 1.875rem;
     }
 
-    .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon {
-        display: none;
+    .tribe-events-single-section {
+      width: 100%;
     }
 
-    
-
-    @media screen and (min-width: 48em) {
-        .tribe-events {
-            margin: 3rem auto 5rem;
-        }
-
-        .tribe-events-single-section {
-            width: 100%;
-        }
-
-        .tribe-events-venue-map {
-            width: unset;
-        }
+    .tribe-events-venue-map {
+      width: unset;
     }
+  }
 }
-

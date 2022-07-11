@@ -264,3 +264,85 @@ add_filter('woocommerce_product_get_rating_html',function ( $html, $rating, $cou
     $html  ='<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">' . wc_get_star_rating_html( $rating, $count ) . '</div>';
     return $html;
 },9999,3);
+
+//below is for remving some dashboard widgets
+function remove_dashboard_widgets()
+{ 
+//first parameter -> slig/id of the widget
+//second parameter -> where the meta box is displayed, it can be page, post, dashboard etc.
+//third parameter -> position of the meta box. If you have used wp_add_dashboard_widget to create the widget or deleting default widget then provide the value "normal". 
+remove_meta_box('wc_admin_dashboard_setup', 'dashboard', "normal");
+remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+remove_meta_box('wc_newsletter_subscription_stats', 'dashboard', 'normal');
+remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+remove_meta_box('dashboard_primary', 'dashboard', 'side');
+}
+add_action("wp_dashboard_setup", "remove_dashboard_widgets");
+
+//below is for deleting Post button in dashboard menu
+add_action( 'admin_init', 'custom_remove_menu_pages' );
+function custom_remove_menu_pages() {
+remove_menu_page('edit.php');
+}
+
+//below is for reordering dashboard menu
+function wpse_custom_menu_order( $menu_ord ) {
+	if ( !$menu_ord ) return true;
+		return array(
+			'index.php', // Dashboard
+			'jetpack',//Jetpack
+			'separator1', // First separator
+			'edit.php', // Posts
+			'upload.php', // Media
+			'link-manager.php', // Links
+			'edit.php?post_type=tribe_events',
+			'wpcf7',//Contact Form 7
+			'cr-reviews',
+			'edit.php?post_type=acf-field-group',//ACF
+			'edit-comments.php', // Comments
+			'edit.php?post_type=page', // Pages
+
+			'separator2', // Second separator
+			'woocommerce',//Woocommerce
+			'edit.php?post_type=product',
+			'themes.php', // Appearance
+			'plugins.php', // Plugins
+			'maxmegamenu',
+			'users.php', // Users
+			'tools.php', // Tools
+			'options-general.php', // Settings
+			'separator-last', // Last separator
+		);
+	}
+	add_filter( 'custom_menu_order', 'wpse_custom_menu_order', 10, 1 );
+	add_filter( 'menu_order', 'wpse_custom_menu_order', 10, 1 );
+
+//below is for wordpress login page styles
+function wpb_login_logo() { ?>
+	<style type="text/css">
+	#login h1 a, .login h1 a { 
+	background-image: url(http://getoutdoors.bcitwebdeveloper.ca/wp-content/uploads/2022/07/cropped-cropped-Liceria-Camp-and-Outdoor-Vintage-Logo.png);
+	height:150px;
+	width:150px;
+	background-size: 150px 150px;
+	background-repeat: no-repeat;
+	padding-bottom: 10px;
+	 
+	}
+	</style>
+<?php }
+
+add_action( 'login_enqueue_scripts', 'wpb_login_logo' );
+function my_login_logo_url() {
+	return home_url();
+	}
+	add_filter( 'login_headerurl', 'my_login_logo_url' );
+	function my_login_logo_url_title() {
+	return 'Your Site Name to Here';
+}
+add_filter( 'login_headertext', 'my_login_logo_url_title' );
+function my_login_stylesheet() {
+	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );

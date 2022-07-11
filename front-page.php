@@ -126,11 +126,11 @@ get_header();
 						<ul>
 						<?php
 						foreach ($terms as $term) {
-							$thumb_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+							$thumb_id = get_term_meta( $term, 'thumbnail_id', true );
 							?>
 								<li>
 									<a href="<?php echo esc_url(get_term_link( $term )) ?>">
-										<?php wp_get_attachment_image( $thumb_id, 'thumbnail' ); ?>
+										<img src="<?php echo wp_get_attachment_image_url( $thumb_id, 'thumbnail' ); ?>">
 										<p><?php echo esc_html( get_term( $term )->name ); ?></p>
 									</a>
 								</li>

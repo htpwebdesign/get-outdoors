@@ -115,15 +115,22 @@ get_header();
 				if (function_exists( 'get_field' )) {
 					$terms = get_field('fourcate');
 					if ($terms) {
+						$sales_key = array_search(49, $terms);
+						if ($sales_key) {
+							$sales_captured = array_slice($terms, $sales_key, 1);
+							unset($terms[$sales_key]);
+							$sales_popped = array_pop($sales_captured);
+							array_unshift($terms, $sales_popped);
+						};
 						?>
 						<ul>
 						<?php
 						foreach ($terms as $term) {
-							$thumb_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+							$thumb_id = get_term_meta( $term, 'thumbnail_id', true );
 							?>
 								<li>
 									<a href="<?php echo esc_url(get_term_link( $term )) ?>">
-										<?php echo wp_get_attachment_image( $thumb_id, 'large' ); ?>
+										<img src="<?php echo wp_get_attachment_image_url( $thumb_id, 'thumbnail' ); ?>">
 										<p><?php echo esc_html( get_term( $term )->name ); ?></p>
 									</a>
 								</li>
@@ -154,7 +161,7 @@ get_header();
 							$events_query -> the_post();
 							?>
 							<article>
-								<?php the_post_thumbnail( 'thumbnail' ); ?>
+								<?php the_post_thumbnail( 'medium' ); ?>
 								<h3><?php the_title(); ?></h3>
 								<?php the_content(); ?>
 							</article>

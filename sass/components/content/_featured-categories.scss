@@ -1,0 +1,13 @@
+#home-featured-categories {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        li {
+            width: 50%;
+        }
+    }
+}

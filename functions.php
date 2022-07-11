@@ -150,6 +150,32 @@ function get_outdoors_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( is_front_page() ) {
+
+		wp_enqueue_style(
+			'swiper-styles',
+			get_template_directory_uri() . '/swiper-bundle.css',
+			array(),
+			'8.1.4',
+		);
+
+		wp_enqueue_script(
+			'swiper-scripts',
+			get_template_directory_uri() . '/js/swiper-bundle.min.js',
+			array(),
+			'8.1.4',
+			true,
+		);
+
+		wp_enqueue_script(
+			'swiper-settings',
+			get_template_directory_uri() . '/js/swiper-settings.js',
+			array( 'swiper-scripts' ),
+			_S_VERSION,
+			true,
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'get_outdoors_scripts' );
 

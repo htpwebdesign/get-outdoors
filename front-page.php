@@ -80,22 +80,32 @@ get_header();
 				
 				$query = new WP_Query( $args );
 				if ( $query -> have_posts() ) {
+					?>
+					<div class="swiper">
+						<div class="swiper-wrapper">
+					<?php
 					while ( $query -> have_posts() ) {
 						$query -> the_post();
 						$product = wc_get_product( get_the_ID() );
 						?>
-							<article>
-								<a href="<?php echo $product->get_permalink() ?>">
-									<?php
-										the_post_thumbnail( 'medium' );
-									?>
+							<div class="swiper-slide">
+								<?php the_post_thumbnail( 'medium' ); ?>
+								<div class="slide-text-container">
 									<h3><?php echo $product->get_name() ?></h3>
-								</a>
-								<p><?php echo $product->get_price_html(); ?></p>
-							</article>
+									<p><?php echo $product->get_price_html(); ?></p>
+									<a class="button" href="<?php echo $product->get_permalink() ?>">Product Info</a>
+								</div>
+							</div>
 						<?php
 					}
 					wp_reset_postdata();
+					?>
+					</div>
+					<nav class="swiper-pagination"></nav>
+				</div>
+				<button class="swiper-button-prev"></button>
+				<button class="swiper-button-next"></button>
+				<?php
 				}
 			?>
 		</section>

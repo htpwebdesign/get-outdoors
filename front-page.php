@@ -162,15 +162,19 @@ get_header();
 							?>
 							<article>
 								<?php the_post_thumbnail( 'medium' ); ?>
-								<h3><?php the_title(); ?></h3>
-								<?php the_content(); ?>
+								<div class="home-events-text-wrapper">
+									<h3><?php the_title(); ?></h3>
+									<?php the_content(); ?>
+								</div>
 							</article>
 							<?php
 						}
 						wp_reset_postdata();
 					}
 			?>
-			<a class="button" href="<?php echo get_post_type_archive_link( 'tribe_events' ) ?>">See Event Details</a>
+				<div class="button-container">
+					<a class="button" href="<?php echo get_post_type_archive_link( 'tribe_events' ) ?>">See All Events</a>
+				</div>
 		</section>
 
 		<section id="home-faq-cta">

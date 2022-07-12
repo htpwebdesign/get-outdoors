@@ -58,15 +58,33 @@
   }
 
   .button {
-    margin: 0 auto 4rem;
+    margin: 0 auto 3rem;
   }
 
   .cart-collaterals {
     margin: 0;
   }
 
-  .checkout-button {
-    margin-top: 10rem;
+  .woocommerce-shipping-destination {
+    margin: 0;
+  }
+
+  .wc-proceed-to-checkout {
+    margin: 3rem auto;
+  }
+
+  .woocommerce-shipping-calculator {
+    margin-bottom: 2rem;
+  }
+
+  .woocommerce-shipping-methods li::marker {
+    content: "";
+  }
+
+  // Cart Total Change Address
+  .address-field .input-text {
+    width: 100%;
+    margin: 0;
   }
 
   @media screen and (min-width: 48em) {

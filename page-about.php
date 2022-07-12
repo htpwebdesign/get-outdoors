@@ -19,7 +19,7 @@ get_header();
 			if (have_rows('aboutpagerepeater')) : 
 				while ( have_rows('aboutpagerepeater') ) : the_row(); 
 					$image = get_sub_field('aboutsubimage', false);
-					$size = 'medium'; ?>
+					$size = 'large'; ?>
 
 					<article>
 						<?php if ( $image ) {

@@ -16,35 +16,47 @@ get_header();
 
 			get_template_part( 'template-parts/page-header');
 
-			if (have_rows('aboutpagerepeater')) : 
-				while ( have_rows('aboutpagerepeater') ) : the_row(); 
-					$image = get_sub_field('aboutsubimage', false);
-					$size = 'large'; ?>
+			if (function_exists('have_rows')) :
+				if (have_rows('aboutpagerepeater')) : 
+					while ( have_rows('aboutpagerepeater') ) : the_row(); 
+						$image = get_sub_field('aboutsubimage', false);
+						$size = 'large'; ?>
 
-					<article>
-						<?php if ( $image ) {
-							echo wp_get_attachment_image($image, $size);
-						} ?>
+						<article>
+							<?php if ( $image ) {
+								echo wp_get_attachment_image($image, $size);
+							} ?>
 
-						<p> <?php the_sub_field('aboutsubtext'); ?></p>
+							<p> <?php the_sub_field('aboutsubtext'); ?></p>
 
-					</article>
+						</article>
 
-				<?php endwhile;
-	
-			endif; ?> 
+					<?php endwhile;
+		
+				endif; 
+			endif;?> 
 
-			<h2><?php the_field('cta_text'); ?></h2>
+			<h2>
+			<?php
+				if (function_exists('the_field')) :
+					if (the_field('cta_text')) :
+						the_field('cta_text'); 
+					endif;
+				endif;
+			?>
+			</h2>
 
-			<?php 
-				$link = get_field('about_page_cta');
-				if( $link ): 
-					$link_url = $link['url'];
-					$link_title = $link['title'];
-					$link_target = $link['target'] ? $link['target'] : '_self';
-					?>
-					<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-				<?php endif; ?>
+			<?php
+				if (function_exists('get_field')) :
+					$link = get_field('about_page_cta');
+					if( $link ): 
+						$link_url = $link['url'];
+						$link_title = $link['title'];
+						$link_target = $link['target'] ? $link['target'] : '_self';
+						?>
+						<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+				<?php endif; 
+				endif; ?>
 			
 		<?php endwhile; // End of the loop.
 		?>

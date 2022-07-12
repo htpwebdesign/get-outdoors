@@ -38,6 +38,10 @@
 --------------------------------------------- */
 @import "content/home-faq-cta";
 
+/* Newsletter Signup
+--------------------------------------------- */
+@import "content/newsletter";
+
 /* Swiper
 --------------------------------------------- */
 @import "swiper/new-products.scss";
@@ -74,6 +78,14 @@
 --------------------------------------------- */
 @import "header/page-banner";
 
-/* Page Banner
+/* About Page
 --------------------------------------------- */
 @import "pages/about-page";
+
+/* Contact Page
+--------------------------------------------- */
+@import "pages/contact-page";
+
+/* Home Page
+--------------------------------------------- */
+// @import "pages/home-page";

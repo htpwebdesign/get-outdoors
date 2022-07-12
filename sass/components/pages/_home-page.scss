@@ -1,0 +1,8 @@
+.home .site-main {
+    display: grid;
+    grid-template-columns: 1rem 1fr 1rem;
+    margin: 0;
+    section {
+        grid-column: 2/3;
+    }
+}

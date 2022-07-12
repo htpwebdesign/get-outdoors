@@ -1,0 +1,152 @@
+// About Page CSS
+@import "../../abstracts/variables/colors";
+
+.page-id-78 {
+  .site-main {
+    margin: 0;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1rem auto 1rem;
+
+    .page-header {
+      grid-column: 1/4;
+    }
+
+    article {
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: 2/3;
+
+      p {
+        margin: 0;
+        margin-top: 1rem;
+      }
+    }
+
+    article:nth-of-type(2) {
+      background-color: $brown;
+      position: relative;
+      grid-column: 1/4;
+      display: grid;
+      grid-template-columns: 1rem auto 1rem;
+
+      img,
+      p {
+        grid-column: 2/3;
+      }
+
+      p {
+        color: $white;
+      }
+    }
+
+    h2,
+    .button {
+      grid-column: 2/3;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .button {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      max-width: 350px;
+    }
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .page-id-78 {
+    .site-main {
+      display: grid;
+      grid-template-columns: 4rem auto 4rem;
+      max-width: none;
+
+      .page-header {
+        grid-column: 1/4;
+      }
+
+      article {
+        grid-column: 2/3;
+        display: flex;
+        align-items: start;
+
+        img {
+          height: auto;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        p {
+          margin: 0;
+          margin-top: 1rem;
+        }
+      }
+
+      article:nth-of-type(2) {
+        grid-column: 1/4;
+        grid-template-columns: 4rem auto 4rem;
+
+        img {
+          grid-column: 2/3;
+        }
+
+        p {
+          grid-column: 2/3;
+        }
+      }
+
+      h2,
+      .button {
+        grid-column: 2/3;
+        justify-self: center;
+      }
+
+      .button {
+        max-width: 200px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 70rem) {
+  .page-id-78 {
+    .site-main {
+      grid-template-columns: 1fr 62.5rem 1fr;
+
+      article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        img {
+          grid-column: 1/2;
+        }
+
+        p {
+          grid-column: 2/3;
+          margin: 0 1rem;
+        }
+      }
+
+      article:nth-of-type(2) {
+        grid-column: 1/4;
+        grid-template-columns: 1fr repeat(2, 31.25rem) 1fr;
+
+        img {
+          grid-column: 3/4;
+        }
+
+        p {
+          order: -1;
+        }
+      }
+    }
+  }
+}

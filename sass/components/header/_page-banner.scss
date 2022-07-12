@@ -15,15 +15,14 @@
   }
 
   .post-thumbnail {
-    margin-left: -20rem;
-    margin-right: -20rem;
+    // margin-left: -20rem;
+    // margin-right: -20rem;
     height: 100%;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      // object-position: top;
     }
   }
 }

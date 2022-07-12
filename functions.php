@@ -233,7 +233,7 @@ add_filter( 'widget_text', 'do_shortcode' );
 // Enqueue Google Font
 wp_enqueue_style(
 	'go-google-fonts',
-	'https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700&family=Montserrat:wght@400;700&display=swap',array(),
+	'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap',array(),
 	null,
 	'all'
 );

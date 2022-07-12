@@ -36,12 +36,12 @@ get_header();
 						) );
 						foreach ($results as $result) {
 						?> 
-						<article class="featuredbundle-item"> 
-						<?php
-							echo get_the_post_thumbnail($result, "thumbnail");
-						?>
-							<h3><?php echo get_the_title($result); ?></h3>
-						</article>
+							<article class="featuredbundle-item"> 
+							<?php
+								echo get_the_post_thumbnail($result, "thumbnail");
+							?>
+								<h3><?php echo get_the_title($result); ?></h3>
+							</article>
 						<?php
 						};
 						?>
@@ -216,5 +216,3 @@ get_header();
 
 <?php
 get_footer();
-
-// [jetpack_subscription_form title="Subscribe" subscribe_placeholder="Enter your e-mail here..." subscribe_text="Recieve updates from Get Outdoors!" subscribe_button="Submit" success_message="You are now subscribed!"]

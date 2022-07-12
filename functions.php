@@ -277,6 +277,13 @@ remove_meta_box('dashboard_activity', 'dashboard', 'normal');
 remove_meta_box('wc_newsletter_subscription_stats', 'dashboard', 'normal');
 remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
 remove_meta_box('dashboard_primary', 'dashboard', 'side');
+remove_meta_box('aioseo-overview', 'dashboard', 'normal');
+remove_meta_box('aioseo-seo-setup', 'dashboard', 'normal');
+remove_meta_box('wpforms_reports_widget_lite', 'dashboard', 'normal');
+remove_meta_box('tribe_dashboard_widget', 'dashboard', 'side');
+remove_meta_box('dashboard_right_now', 'dashboard', 'side');
+remove_meta_box('jetpack_summary_widget', 'dashboard', 'column3');
+remove_meta_box('wpseo-dashboard-overview', 'dashboard', 'column3');
 }
 add_action("wp_dashboard_setup", "remove_dashboard_widgets");
 

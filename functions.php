@@ -361,3 +361,14 @@ function hide_editor() {
 //below is for editting block editor styles
 add_editor_style('editor-styles.css');
 add_theme_support( 'editor-styles' );
+
+//below is for adding clients tutorial to dashboard widgets
+function my_custom_dashboard_widgets() {
+	global $wp_meta_boxes;
+	wp_add_dashboard_widget('custom_help_widget', 'Theme Support', 'custom_dashboard_help');
+}
+function custom_dashboard_help() {
+	echo '<p>Welcome to Custom Blog Theme! Need help? Contact the developer <a href="mailto:yourusername@gmail.com">here</a>. For WordPress Tutorials visit: <a href="https://www.youtube.com/watch?v=VnjeR-bsRM4" target="_blank">WPBeginner</a>. For how to use ACF, please visit <a href="https://www.youtube.com/watch?v=cUtY_07Q4T0">here</a>. For how to use Woocommerce, please visit <a href="https://www.youtube.com/watch?v=oTr--KR4qoM">here</a>. For reference document, please click <a href="http://getoutdoors.bcitwebdeveloper.ca/wp-content/uploads/2022/07/clienttutorial.pdf">here</a>.</p>';
+}
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+	

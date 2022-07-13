@@ -1,16 +1,32 @@
 //entire single product page layout
 .single-product .site-main div.woocommerce-notices-wrapper{
 	.woocommerce-message, .woocommerce-error{
-		background-color: transparent;
-		position:relative;
+		color:white;
+		background-color: #587767;
 		list-style:none;
+		display: flex;
+		width:100%;
+		padding:0.4rem 0.7rem 0.4rem 0.7rem;
+		margin:0.5rem 0 0.5rem 0;
 	}
 	a{
-		display: block;
-		width:6rem;
-		text-align: center;
-		position: absolute;
-		right:0;
+		color:white;
+		background-color: initial;
+		text-decoration: underline;
+		border-radius: initial;
+		padding: initial;
+		margin-left:1rem;
+		order:2;
+	}
+
+	ul{
+		margin:0.5rem 0 0.5rem 0;
+		li{
+			display: flex;
+			a{
+				order:2;
+			}
+		}
 	}
 }
 
@@ -56,6 +72,9 @@
 .single-product .site-main div.type-product .woocommerce-product-gallery{
 	grid-area:image;
 	width:90%;
+	div.flex-viewport{
+		margin-bottom:1.5rem;
+	};
 }
 
 .single-product .site-main div.type-product .entry-summary{
@@ -70,8 +89,8 @@
 	  "price reviewintitle"
 	  "summarydescription summarydescription"
 	  "stockstatus stockstatus"
-	  "compare instock"
 	  "addtocardbutton addtocardbutton"
+	  "compare instock"
 	  "sku sku"
 	  "social social";
 	  h1{
@@ -94,13 +113,13 @@
 	  form.cart:not(.bundle_form){
 		width:100%;
 		grid-area:addtocardbutton;
-		display: grid;
-		grid-template-columns: 50% 50%;
-		grid-template-areas: 
-			"choice choice"
-	  		"quantity button";
+		// display: grid;
+		// grid-template-columns: 50% 50%;
+		// grid-template-areas: 
+		// 	"choice choice"
+	  	// 	"quantity button";
 		div.quantity{
-			grid-area:quantity;
+			// grid-area:quantity;
 			margin-bottom:0.5rem;
 			margin-top:0.5rem;
 			input{
@@ -108,15 +127,21 @@
 			}			
 		}
 		button{
-			grid-area:button;
-			width:7rem;
+			// grid-area:button;
+			width:8rem;
 			margin-bottom:0.5rem;
 			margin-top:0.5rem;
 		}
 		table.variations{
 			margin-top:1rem;
 			margin-bottom:1rem;
-			grid-area:choice;
+			// grid-area:choice;
+			tbody tr{
+				text-align:left;
+				td a{
+					margin-left:1rem;
+				}
+			}
 		}
 	  }
 
@@ -148,6 +173,9 @@
 	  div.product_meta{
 		grid-area:sku;
 		margin-bottom:1rem;
+		span.posted_in{
+			display: block;
+		}
 	  }
 	  div.addtoany_list{
 		grid-area:social;

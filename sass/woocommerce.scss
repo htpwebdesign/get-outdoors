@@ -50,7 +50,7 @@ $woocommerce__color-info: #3d9cd2;
 /**
  * Events
  */
-@import "plugins/woocommerce/events";
+@import "plugins/event-calendar/events";
 
 /**
  * 404
@@ -71,3 +71,8 @@ $woocommerce__color-info: #3d9cd2;
  * Product Comparison Widget
  */
 @import "plugins/woocommerce/product-comparison";
+
+/**
+ * Related Products
+ */
+@import "plugins/woocommerce/related-products";

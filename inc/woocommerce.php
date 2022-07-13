@@ -92,8 +92,8 @@ add_filter( 'body_class', 'get_outdoors_woocommerce_active_body_class' );
  */
 function get_outdoors_woocommerce_related_products_args( $args ) {
 	$defaults = array(
-		'posts_per_page' => 3,
-		'columns'        => 3,
+		'posts_per_page' => 2,
+		'columns'        => 2,
 	);
 
 	$args = wp_parse_args( $defaults, $args );
@@ -261,3 +261,11 @@ remove_action(
 	'woocommerce_result_count',
 	20
 );
+
+// remove_action('woocommerce_after_single_product_summary' , 'woocommerce_output_related_products' , 20);
+
+// function go_output_related_products() {
+// 	echo do_shortcode('[related_products limit="12"]');
+// }
+
+// add_action('woocommerce_after_single_product_summary' , 'go_output_related_products', 21);

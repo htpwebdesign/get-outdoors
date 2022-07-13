@@ -1,4 +1,4 @@
-.related ul.products {
+div.product .related ul.products {
     justify-items: center;
     &>li.product {
         width: 100%;
@@ -7,7 +7,7 @@
 }
 
 @media(min-width: 70em) {
-    .related ul.products {
+    div.product .related ul.products {
         display: grid;
     }
 }

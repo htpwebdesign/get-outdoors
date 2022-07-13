@@ -17,24 +17,24 @@
   .product-link {
     display: flex;
     flex-wrap: wrap;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
 
     img {
       width: 80px;
       margin-left: 0;
+      display: none;
     }
 
     h3 {
       width: 100%;
       color: $black;
     }
-  }
-
-  .woocommerce-products-compare-remove-all-products {
-    color: #ffffff;
-    background-color: #587767;
-    text-decoration: none;
-    border-radius: 15px;
-    padding: 10px 12px;
   }
 
   .woocommerce-products-compare-remove-all-products,
@@ -57,6 +57,16 @@
         a.remove-compare-product {
           opacity: 0;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .woocommerce-products-compare-widget {
+    .product-link {
+      img {
+        display: inline;
       }
     }
   }

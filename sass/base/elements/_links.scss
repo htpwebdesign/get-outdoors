@@ -32,7 +32,9 @@ a {
 .cart button,
 a.button,
 button.wp-block-button__link,
-.added_to_cart {
+.added_to_cart,
+.woocommerce-products-compare-remove-all-products,
+.wc-block-product-categories__button {
   color: $white;
   background-color: $green;
   text-decoration: none;
@@ -42,6 +44,7 @@ button.wp-block-button__link,
   &:hover,
   &:focus,
   &:active {
+    color: $white;
     filter: brightness(120%);
   }
 }

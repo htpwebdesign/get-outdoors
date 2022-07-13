@@ -1,5 +1,8 @@
 #home-upcomming-workshops {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    article:nth-of-type(1) {
+        margin-bottom: 4rem;
+    }
     h2 {
         text-align: center;
     }
@@ -18,7 +21,7 @@
 @media (min-width: 500px) {
     #home-upcomming-workshops {
         max-width: 54rem;
-        margin: 3rem auto;   
+        margin: 0 auto 5rem;   
         article {
             display: flex;
             justify-content: center;

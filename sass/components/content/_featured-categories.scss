@@ -1,4 +1,5 @@
 #home-featured-categories {
+    margin-bottom: 5rem;
     ul {
         display: flex;
         flex-wrap: wrap;
@@ -42,7 +43,7 @@
     #home-featured-categories {
         ul {
             max-width: 42rem;
-            margin: 4rem auto;
+            margin: 0 auto;
         }
     }
 }

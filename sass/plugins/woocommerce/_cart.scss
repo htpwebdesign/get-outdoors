@@ -8,6 +8,7 @@
   .site-main {
     flex-grow: 1;
   }
+
   .woocommerce-info {
     background-color: $white;
   }
@@ -39,6 +40,7 @@
   .product-thumbnail img {
     display: block;
     margin: 0 auto;
+    width: 5rem;
   }
 
   .product-subtotal {
@@ -47,6 +49,7 @@
 
   .product-remove a {
     text-decoration: none;
+    font-size: 2rem;
   }
 
   .woocommerce-cart-form__contents .tbody:last-child {
@@ -103,7 +106,7 @@
 
   @media screen and (min-width: 70em) {
     .site-main {
-      margin: 0 10rem;
+      width: 100%;
     }
   }
 }

@@ -69,7 +69,7 @@
         &:focus,
         &:active {
           animation: bounce 1s;
-          fill: grey;
+          filter: brightness(70%);
         }
 
         @keyframes bounce {
@@ -110,7 +110,7 @@
         &:hover,
         &:focus,
         &:active {
-          color: $green;
+          filter: brightness(70%);
         }
 
         &:visited {

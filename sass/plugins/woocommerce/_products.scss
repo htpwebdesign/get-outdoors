@@ -19,6 +19,12 @@ ul.products {
     h2 {
       text-align: center;
       font-size: 1.5rem;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+      }
     }
 
     .button {
@@ -144,10 +150,10 @@ span.price {
     display: grid;
     width: 100%;
   }
-
 }
 
 .product .woocommerce-LoopProduct-link {
+  text-decoration: none;
   position: relative;
 }
 

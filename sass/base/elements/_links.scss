@@ -37,4 +37,10 @@ button.wp-block-button__link {
   text-decoration: none;
   border-radius: 15px;
   padding: 10px 12px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    filter: brightness(120%);
+  }
 }

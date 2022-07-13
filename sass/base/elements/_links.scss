@@ -31,7 +31,8 @@ a {
 .wpcf7-form .wpcf7-submit,
 .cart button,
 a.button,
-button.wp-block-button__link {
+button.wp-block-button__link,
+.added_to_cart {
   color: $white;
   background-color: $green;
   text-decoration: none;

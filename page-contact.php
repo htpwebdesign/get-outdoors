@@ -27,20 +27,20 @@ get_header();
 
 			if (function_exists('have_rows')) {
 				if ( have_rows('faq_repeater')) {
-          echo "<h1>FAQ</h1>";
+          echo "<h2>FAQs</h2>";
 					while( have_rows('faq_repeater')) {
 						the_row();
 						$faq_question = get_sub_field('faq_question');
 						$faq_answer = get_sub_field('faq_answer');
 						?>
 
-        <article class="contact-faq">
-					<button class="accordion"><?php echo $faq_question; ?></button>
-							<div class="panel">
-							<p><?php echo $faq_answer; ?></p>
-							</div> 
-        </article>  
-						<?php
+            <section id="faq" class="contact-faq">
+              <button class="accordion"><?php echo $faq_question; ?></button>
+              <div class="panel">
+                  <p><?php echo $faq_answer; ?></p>
+              </div> 
+            </section>  
+					  <?php
 					};
 				};
 			};

@@ -31,6 +31,16 @@
     display: flex;
     flex-direction: column;
   }
+
+  .woocommerce-form-login .woocommerce-form-row {
+    justify-content: flex-start;
+    align-items: start;
+  }
+
+  .woocommerce-form-login .input-text {
+    width: 15rem;
+  }
+
   .entry-content {
     justify-content: center;
     align-items: center;
@@ -38,11 +48,6 @@
 
   .woocommerce-Input {
     width: 16rem;
-  }
-
-  .woocommerce-form-login .woocommerce-form-row {
-    justify-content: flex-start;
-    align-items: start;
   }
 
   .woocommerce-form__label-for-checkbox span {
@@ -78,6 +83,7 @@
   .woocommerce-Address-title h3 {
     margin-bottom: 0.5rem;
   }
+
   .input-text {
     width: 100%;
   }

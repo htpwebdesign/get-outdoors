@@ -1,10 +1,22 @@
 .post-type-archive-tribe_events,
 .single-tribe_events {
+  *,
+  .tribe-common .tribe-common-h7,
+  .tribe-common .tribe-common-h8,
+  .tribe-common .tribe-common-c-btn-border-small,
+  .tribe-common a.tribe-common-c-btn-border-small,
+  .tribe-common button,
+  .tribe-common input,
+  .tribe-common optgroup,
+  .tribe-common select,
+  .tribe-common textarea {
+    font-family: $font__main;
+  }
+
   .tribe-common--breakpoint-medium.tribe-common .tribe-common-l-container {
     padding-left: 0;
     padding-right: 0;
   }
-  font-family: Montserrat;
   .tribe-common-l-container {
     padding-top: 0;
   }

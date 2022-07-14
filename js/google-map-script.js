@@ -15,7 +15,7 @@ jQuery(document).ready(function( $ ) {
         var $markers = $el.find('.marker');
         // Create gerenic map.
         var mapArgs = {
-            zoom : $el.data('zoom') || 16,
+            zoom : $el.data('zoom') || 13.75,
             mapTypeId : google.maps.MapTypeId.ROADMAP,
             styles : [
                 {

@@ -20,6 +20,14 @@
 			<nav id="footer-misc-links">
 				<?php wp_nav_menu( array( 'theme_location' => 'footer-2') ); ?>
 			</nav>
+			<section class="copyright">
+				<p>&copy; Get Outdoors - 
+					<a href="https://michikohasegawa.com/" target="_blank" rel="noopener noreferrer">Michiko Hasegawa</a>,
+					<a href="https://evanwliao.com/" target="_blank" rel="noopener noreferrer">Evan Liao</a>,
+					<a href="https://casims.ca/" target="_blank" rel="noopener noreferrer">Connor Sims</a>,
+					<a href="https://dywprojects.ca/" target="_blank" rel="noopener noreferrer">David Wang</a>
+				</p>
+			</section>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

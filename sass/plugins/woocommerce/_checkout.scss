@@ -36,12 +36,9 @@
     max-width: 30rem;
   }
 
-  .col2-set {
-    max-width: 25rem;
-  }
-
   .woocommerce-billing-fields__field-wrapper {
     margin: 0 auto;
+    max-width: 30rem;
   }
 
   .input-text {
@@ -52,8 +49,17 @@
     margin-top: 4rem;
   }
 
+  .shipping_address {
+    margin: 0 auto;
+    max-width: 30rem;
+  }
+
+  .woocommerce-additional-fields {
+    max-width: 30rem;
+    margin: 0 auto 3rem;
+  }
   .woocommerce-checkout-review-order-table {
-    max-width: 25rem;
+    max-width: 30rem;
     margin: 0 auto;
   }
 
@@ -72,7 +78,8 @@
   .woocommerce-shipping-methods {
     margin: 0;
     padding: 0;
-    width: 8rem;
+    width: 10rem;
+    list-style: none;
   }
 
   .payment_method_stripe,
@@ -82,11 +89,17 @@
   }
 
   .woocommerce-checkout-payment {
-    margin-top: 3rem;
+    margin: 3rem auto 3rem;
+    max-width: 30rem;
   }
 
   .wc_payment_methods {
     margin: 0;
+    padding: 0;
+  }
+
+  .payment_method_stripe {
+    list-style: none;
   }
 
   // // Order Received

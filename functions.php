@@ -356,6 +356,8 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
 //below is for turning off content editor for
 //Company History,Contact,Homepage, Shop pages
+
+
 add_action( 'admin_init', 'hide_editor' );
 function hide_editor() {
   $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
@@ -364,6 +366,7 @@ function hide_editor() {
     remove_post_type_support('page', 'editor');
   }
 }
+
 
 //below is for editting block editor styles
 add_editor_style('editor-styles.css');
